@@ -1,0 +1,4404 @@
+
+# REST API for  TechM Arena Ad Exchange
+swagger: '2.0'
+info:
+  title: TechM Arena Ad Exchange API
+  description: API specification for TechM Arena Ad Exchange
+  version: "1.0.0"
+host: api.test.com
+schemes:
+  - http
+  - https
+basePath: /v1
+produces:
+  - application/json
+paths:
+  /user:
+    get:
+      description: |
+        List of User
+      parameters:
+        - name: pageNo
+          in: query
+          description: pageNo
+          required: false
+          type: integer
+        - name: pageSize
+          in: query
+          description: pageSize
+          required: false
+          type: integer
+      tags:
+        - User
+      responses:
+        200:
+          description: List of User
+          schema:
+            $ref: '#/definitions/UserList'          
+    post:
+      description: Creates a new User.
+      operationId: createUser
+      parameters:
+        - name: user
+          in: body
+          description: User to be created
+          required: true
+          schema:
+            $ref: '#/definitions/User'
+      responses:
+        '200':
+          description: created User
+          schema:
+            $ref: '#/definitions/User'
+    put:
+      description: Updates the User.
+      operationId: updateUser
+      parameters:
+        - name: user
+          in: body
+          description: User to be updated
+          required: true
+          schema:
+            $ref: '#/definitions/User'
+      responses:
+        '200':
+          description: updated User
+          schema:
+            $ref: '#/definitions/User'
+  /user/{id}:
+    get:
+      description: Returns User for the given id
+      operationId: getUser
+      parameters:
+        - name: id
+          in: path
+          description: ID of User
+          required: true
+          type: integer
+      responses:
+        '200':
+          description: User response
+          schema:
+            $ref: '#/definitions/User'
+    delete:
+      description: deletes a single User based on the ID supplied
+      operationId: deleteUser
+      parameters:
+        - name: id
+          in: path
+          description: ID of User to delete
+          required: true
+          type: integer
+      responses:
+        '200':
+          description: User deleted
+  /user/search:
+    get:
+      description: Search User
+      operationId: searchUser
+      parameters:
+        - name: email
+          in: query
+          description: email
+          required: false
+          type: string
+        - name: loginName
+          in: query
+          description: loginName
+          required: false
+          type: string
+        - name: password
+          in: query
+          description: password
+          required: false
+          type: string
+        - name: status
+          in: query
+          description: status
+          required: false
+          type: integer
+        - name: userType
+          in: query
+          description: userType
+          required: false
+          type: integer
+        - name: hintQuestion1
+          in: query
+          description: hintQuestion1
+          required: false
+          type: string
+        - name: hintAnswer1
+          in: query
+          description: hintAnswer1
+          required: false
+          type: string
+        - name: hintQuestion2
+          in: query
+          description: hintQuestion2
+          required: false
+          type: string
+        - name: hintAnswer2
+          in: query
+          description: hintAnswer2
+          required: false
+          type: string
+        - name: isAdmin
+          in: query
+          description: isAdmin
+          required: false
+          type: boolean
+        - name: createdTimeStart
+          in: query
+          description: createdTimeStart
+          required: false
+          type: string
+        - name: createdTimeEnd
+          in: query
+          description: createdTimeEnd
+          required: false
+          type: string
+        - name: updatedTimeStart
+          in: query
+          description: updatedTimeStart
+          required: false
+          type: string
+        - name: updatedTimeEnd
+          in: query
+          description: updatedTimeEnd
+          required: false
+          type: string
+        - name: createdByUser
+          in: query
+          description: createdByUser
+          required: false
+          type: string
+        - name: updatedByUser
+          in: query
+          description: updatedByUser
+          required: false
+          type: string
+        - name: advertiserId
+          in: query
+          description: advertiserId
+          required: false
+          type: String
+        - name: publisherId
+          in: query
+          description: publisherId
+          required: false
+          type: String
+        - name: roleId
+          in: query
+          description: roleId
+          required: false
+          type: String
+        - name: pageNo
+          in: query
+          description: pageNo
+          required: false
+          type: integer
+        - name: pageSize
+          in: query
+          description: pageSize
+          required: false
+          type: integer
+      responses:
+        '200':
+          description: List of User
+          schema:
+            $ref: '#/definitions/UserList'
+  /user/search/keyword:
+    get:
+      description: Search User by keyword
+      operationId: searchUserByKeyword
+      parameters:
+        - name: pageNo
+          in: query
+          description: pageNo
+          required: false
+          type: integer
+        - name: pageSize
+          in: query
+          description: pageSize
+          required: false
+          type: integer
+      responses:
+        '200':
+          description: List of User
+          schema:
+            $ref: '#/definitions/UserList'            
+  /userSession:
+    get:
+      description: |
+        List of UserSession
+      parameters:
+        - name: pageNo
+          in: query
+          description: pageNo
+          required: false
+          type: integer
+        - name: pageSize
+          in: query
+          description: pageSize
+          required: false
+          type: integer
+      tags:
+        - User
+      responses:
+        200:
+          description: List of UserSession
+          schema:
+            $ref: '#/definitions/UserSessionList'          
+    post:
+      description: Creates a new UserSession.
+      operationId: createUserSession
+      parameters:
+        - name: userSession
+          in: body
+          description: UserSession to be created
+          required: true
+          schema:
+            $ref: '#/definitions/UserSession'
+      responses:
+        '200':
+          description: created UserSession
+          schema:
+            $ref: '#/definitions/UserSession'
+    put:
+      description: Updates the UserSession.
+      operationId: updateUserSession
+      parameters:
+        - name: userSession
+          in: body
+          description: UserSession to be updated
+          required: true
+          schema:
+            $ref: '#/definitions/UserSession'
+      responses:
+        '200':
+          description: updated UserSession
+          schema:
+            $ref: '#/definitions/UserSession'
+  /userSession/{id}:
+    get:
+      description: Returns UserSession for the given id
+      operationId: getUserSession
+      parameters:
+        - name: id
+          in: path
+          description: ID of UserSession
+          required: true
+          type: integer
+      responses:
+        '200':
+          description: UserSession response
+          schema:
+            $ref: '#/definitions/UserSession'
+    delete:
+      description: deletes a single UserSession based on the ID supplied
+      operationId: deleteUserSession
+      parameters:
+        - name: id
+          in: path
+          description: ID of UserSession to delete
+          required: true
+          type: integer
+      responses:
+        '200':
+          description: UserSession deleted
+  /userSession/search:
+    get:
+      description: Search UserSession
+      operationId: searchUserSession
+      parameters:
+        - name: userId
+          in: query
+          description: userId
+          required: false
+          type: string
+        - name: userSessionId
+          in: query
+          description: userSessionId
+          required: false
+          type: string
+        - name: authToken
+          in: query
+          description: authToken
+          required: false
+          type: string
+        - name: lastAccessTimeStart
+          in: query
+          description: lastAccessTimeStart
+          required: false
+          type: string
+        - name: lastAccessTimeEnd
+          in: query
+          description: lastAccessTimeEnd
+          required: false
+          type: string
+        - name: lastLoggedInTimeStart
+          in: query
+          description: lastLoggedInTimeStart
+          required: false
+          type: string
+        - name: lastLoggedInTimeEnd
+          in: query
+          description: lastLoggedInTimeEnd
+          required: false
+          type: string
+        - name: createdTimeStart
+          in: query
+          description: createdTimeStart
+          required: false
+          type: string
+        - name: createdTimeEnd
+          in: query
+          description: createdTimeEnd
+          required: false
+          type: string
+        - name: updatedTimeStart
+          in: query
+          description: updatedTimeStart
+          required: false
+          type: string
+        - name: updatedTimeEnd
+          in: query
+          description: updatedTimeEnd
+          required: false
+          type: string
+        - name: createdByUser
+          in: query
+          description: createdByUser
+          required: false
+          type: string
+        - name: updatedByUser
+          in: query
+          description: updatedByUser
+          required: false
+          type: string
+        - name: pageNo
+          in: query
+          description: pageNo
+          required: false
+          type: integer
+        - name: pageSize
+          in: query
+          description: pageSize
+          required: false
+          type: integer
+      responses:
+        '200':
+          description: List of UserSession
+          schema:
+            $ref: '#/definitions/UserSessionList'
+  /userSession/search/keyword:
+    get:
+      description: Search UserSession by keyword
+      operationId: searchUserSessionByKeyword
+      parameters:
+        - name: pageNo
+          in: query
+          description: pageNo
+          required: false
+          type: integer
+        - name: pageSize
+          in: query
+          description: pageSize
+          required: false
+          type: integer
+      responses:
+        '200':
+          description: List of UserSession
+          schema:
+            $ref: '#/definitions/UserSessionList'            
+  /notification:
+    get:
+      description: |
+        List of Notification
+      parameters:
+        - name: pageNo
+          in: query
+          description: pageNo
+          required: false
+          type: integer
+        - name: pageSize
+          in: query
+          description: pageSize
+          required: false
+          type: integer
+      tags:
+        - User
+      responses:
+        200:
+          description: List of Notification
+          schema:
+            $ref: '#/definitions/NotificationList'          
+    post:
+      description: Creates a new Notification.
+      operationId: createNotification
+      parameters:
+        - name: notification
+          in: body
+          description: Notification to be created
+          required: true
+          schema:
+            $ref: '#/definitions/Notification'
+      responses:
+        '200':
+          description: created Notification
+          schema:
+            $ref: '#/definitions/Notification'
+    put:
+      description: Updates the Notification.
+      operationId: updateNotification
+      parameters:
+        - name: notification
+          in: body
+          description: Notification to be updated
+          required: true
+          schema:
+            $ref: '#/definitions/Notification'
+      responses:
+        '200':
+          description: updated Notification
+          schema:
+            $ref: '#/definitions/Notification'
+  /notification/{id}:
+    get:
+      description: Returns Notification for the given id
+      operationId: getNotification
+      parameters:
+        - name: id
+          in: path
+          description: ID of Notification
+          required: true
+          type: integer
+      responses:
+        '200':
+          description: Notification response
+          schema:
+            $ref: '#/definitions/Notification'
+    delete:
+      description: deletes a single Notification based on the ID supplied
+      operationId: deleteNotification
+      parameters:
+        - name: id
+          in: path
+          description: ID of Notification to delete
+          required: true
+          type: integer
+      responses:
+        '200':
+          description: Notification deleted
+  /notification/search:
+    get:
+      description: Search Notification
+      operationId: searchNotification
+      parameters:
+        - name: notificationId
+          in: query
+          description: notificationId
+          required: false
+          type: string
+        - name: userId
+          in: query
+          description: userId
+          required: false
+          type: string
+        - name: deviceOS
+          in: query
+          description: deviceOS
+          required: false
+          type: string
+        - name: source
+          in: query
+          description: source
+          required: false
+          type: string
+        - name: createdTimeStart
+          in: query
+          description: createdTimeStart
+          required: false
+          type: string
+        - name: createdTimeEnd
+          in: query
+          description: createdTimeEnd
+          required: false
+          type: string
+        - name: updatedTimeStart
+          in: query
+          description: updatedTimeStart
+          required: false
+          type: string
+        - name: updatedTimeEnd
+          in: query
+          description: updatedTimeEnd
+          required: false
+          type: string
+        - name: createdByUser
+          in: query
+          description: createdByUser
+          required: false
+          type: string
+        - name: updatedByUser
+          in: query
+          description: updatedByUser
+          required: false
+          type: string
+        - name: pageNo
+          in: query
+          description: pageNo
+          required: false
+          type: integer
+        - name: pageSize
+          in: query
+          description: pageSize
+          required: false
+          type: integer
+      responses:
+        '200':
+          description: List of Notification
+          schema:
+            $ref: '#/definitions/NotificationList'
+  /notification/search/keyword:
+    get:
+      description: Search Notification by keyword
+      operationId: searchNotificationByKeyword
+      parameters:
+        - name: pageNo
+          in: query
+          description: pageNo
+          required: false
+          type: integer
+        - name: pageSize
+          in: query
+          description: pageSize
+          required: false
+          type: integer
+      responses:
+        '200':
+          description: List of Notification
+          schema:
+            $ref: '#/definitions/NotificationList'            
+  /role:
+    get:
+      description: |
+        List of Role
+      parameters:
+        - name: pageNo
+          in: query
+          description: pageNo
+          required: false
+          type: integer
+        - name: pageSize
+          in: query
+          description: pageSize
+          required: false
+          type: integer
+      tags:
+        - User
+      responses:
+        200:
+          description: List of Role
+          schema:
+            $ref: '#/definitions/RoleList'          
+    post:
+      description: Creates a new Role.
+      operationId: createRole
+      parameters:
+        - name: role
+          in: body
+          description: Role to be created
+          required: true
+          schema:
+            $ref: '#/definitions/Role'
+      responses:
+        '200':
+          description: created Role
+          schema:
+            $ref: '#/definitions/Role'
+    put:
+      description: Updates the Role.
+      operationId: updateRole
+      parameters:
+        - name: role
+          in: body
+          description: Role to be updated
+          required: true
+          schema:
+            $ref: '#/definitions/Role'
+      responses:
+        '200':
+          description: updated Role
+          schema:
+            $ref: '#/definitions/Role'
+  /role/{id}:
+    get:
+      description: Returns Role for the given id
+      operationId: getRole
+      parameters:
+        - name: id
+          in: path
+          description: ID of Role
+          required: true
+          type: integer
+      responses:
+        '200':
+          description: Role response
+          schema:
+            $ref: '#/definitions/Role'
+    delete:
+      description: deletes a single Role based on the ID supplied
+      operationId: deleteRole
+      parameters:
+        - name: id
+          in: path
+          description: ID of Role to delete
+          required: true
+          type: integer
+      responses:
+        '200':
+          description: Role deleted
+  /role/search:
+    get:
+      description: Search Role
+      operationId: searchRole
+      parameters:
+        - name: roleId
+          in: query
+          description: roleId
+          required: false
+          type: string
+        - name: roleName
+          in: query
+          description: roleName
+          required: false
+          type: integer
+        - name: roleGroup
+          in: query
+          description: roleGroup
+          required: false
+          type: integer
+        - name: createdTimeStart
+          in: query
+          description: createdTimeStart
+          required: false
+          type: string
+        - name: createdTimeEnd
+          in: query
+          description: createdTimeEnd
+          required: false
+          type: string
+        - name: updatedTimeStart
+          in: query
+          description: updatedTimeStart
+          required: false
+          type: string
+        - name: updatedTimeEnd
+          in: query
+          description: updatedTimeEnd
+          required: false
+          type: string
+        - name: createdByUser
+          in: query
+          description: createdByUser
+          required: false
+          type: string
+        - name: updatedByUser
+          in: query
+          description: updatedByUser
+          required: false
+          type: string
+        - name: pageNo
+          in: query
+          description: pageNo
+          required: false
+          type: integer
+        - name: pageSize
+          in: query
+          description: pageSize
+          required: false
+          type: integer
+      responses:
+        '200':
+          description: List of Role
+          schema:
+            $ref: '#/definitions/RoleList'
+  /role/search/keyword:
+    get:
+      description: Search Role by keyword
+      operationId: searchRoleByKeyword
+      parameters:
+        - name: pageNo
+          in: query
+          description: pageNo
+          required: false
+          type: integer
+        - name: pageSize
+          in: query
+          description: pageSize
+          required: false
+          type: integer
+      responses:
+        '200':
+          description: List of Role
+          schema:
+            $ref: '#/definitions/RoleList'            
+  /advertiser:
+    get:
+      description: |
+        List of Advertiser
+      parameters:
+        - name: pageNo
+          in: query
+          description: pageNo
+          required: false
+          type: integer
+        - name: pageSize
+          in: query
+          description: pageSize
+          required: false
+          type: integer
+      tags:
+        - User
+      responses:
+        200:
+          description: List of Advertiser
+          schema:
+            $ref: '#/definitions/AdvertiserList'          
+    post:
+      description: Creates a new Advertiser.
+      operationId: createAdvertiser
+      parameters:
+        - name: advertiser
+          in: body
+          description: Advertiser to be created
+          required: true
+          schema:
+            $ref: '#/definitions/Advertiser'
+      responses:
+        '200':
+          description: created Advertiser
+          schema:
+            $ref: '#/definitions/Advertiser'
+    put:
+      description: Updates the Advertiser.
+      operationId: updateAdvertiser
+      parameters:
+        - name: advertiser
+          in: body
+          description: Advertiser to be updated
+          required: true
+          schema:
+            $ref: '#/definitions/Advertiser'
+      responses:
+        '200':
+          description: updated Advertiser
+          schema:
+            $ref: '#/definitions/Advertiser'
+  /advertiser/{id}:
+    get:
+      description: Returns Advertiser for the given id
+      operationId: getAdvertiser
+      parameters:
+        - name: id
+          in: path
+          description: ID of Advertiser
+          required: true
+          type: integer
+      responses:
+        '200':
+          description: Advertiser response
+          schema:
+            $ref: '#/definitions/Advertiser'
+    delete:
+      description: deletes a single Advertiser based on the ID supplied
+      operationId: deleteAdvertiser
+      parameters:
+        - name: id
+          in: path
+          description: ID of Advertiser to delete
+          required: true
+          type: integer
+      responses:
+        '200':
+          description: Advertiser deleted
+  /advertiser/search:
+    get:
+      description: Search Advertiser
+      operationId: searchAdvertiser
+      parameters:
+        - name: advertiserId
+          in: query
+          description: advertiserId
+          required: false
+          type: string
+        - name: advertiserName
+          in: query
+          description: advertiserName
+          required: false
+          type: string
+        - name: company
+          in: query
+          description: company
+          required: false
+          type: string
+        - name: contactName
+          in: query
+          description: contactName
+          required: false
+          type: string
+        - name: contactNumber
+          in: query
+          description: contactNumber
+          required: false
+          type: string
+        - name: country
+          in: query
+          description: country
+          required: false
+          type: string
+        - name: description
+          in: query
+          description: description
+          required: false
+          type: string
+        - name: partnerType
+          in: query
+          description: partnerType
+          required: false
+          type: string
+        - name: status
+          in: query
+          description: status
+          required: false
+          type: string
+        - name: createdTimeStart
+          in: query
+          description: createdTimeStart
+          required: false
+          type: string
+        - name: createdTimeEnd
+          in: query
+          description: createdTimeEnd
+          required: false
+          type: string
+        - name: updatedTimeStart
+          in: query
+          description: updatedTimeStart
+          required: false
+          type: string
+        - name: updatedTimeEnd
+          in: query
+          description: updatedTimeEnd
+          required: false
+          type: string
+        - name: createdByUser
+          in: query
+          description: createdByUser
+          required: false
+          type: string
+        - name: updatedByUser
+          in: query
+          description: updatedByUser
+          required: false
+          type: string
+        - name: pageNo
+          in: query
+          description: pageNo
+          required: false
+          type: integer
+        - name: pageSize
+          in: query
+          description: pageSize
+          required: false
+          type: integer
+      responses:
+        '200':
+          description: List of Advertiser
+          schema:
+            $ref: '#/definitions/AdvertiserList'
+  /advertiser/search/keyword:
+    get:
+      description: Search Advertiser by keyword
+      operationId: searchAdvertiserByKeyword
+      parameters:
+        - name: pageNo
+          in: query
+          description: pageNo
+          required: false
+          type: integer
+        - name: pageSize
+          in: query
+          description: pageSize
+          required: false
+          type: integer
+      responses:
+        '200':
+          description: List of Advertiser
+          schema:
+            $ref: '#/definitions/AdvertiserList'            
+  /publisher:
+    get:
+      description: |
+        List of Publisher
+      parameters:
+        - name: pageNo
+          in: query
+          description: pageNo
+          required: false
+          type: integer
+        - name: pageSize
+          in: query
+          description: pageSize
+          required: false
+          type: integer
+      tags:
+        - User
+      responses:
+        200:
+          description: List of Publisher
+          schema:
+            $ref: '#/definitions/PublisherList'          
+    post:
+      description: Creates a new Publisher.
+      operationId: createPublisher
+      parameters:
+        - name: publisher
+          in: body
+          description: Publisher to be created
+          required: true
+          schema:
+            $ref: '#/definitions/Publisher'
+      responses:
+        '200':
+          description: created Publisher
+          schema:
+            $ref: '#/definitions/Publisher'
+    put:
+      description: Updates the Publisher.
+      operationId: updatePublisher
+      parameters:
+        - name: publisher
+          in: body
+          description: Publisher to be updated
+          required: true
+          schema:
+            $ref: '#/definitions/Publisher'
+      responses:
+        '200':
+          description: updated Publisher
+          schema:
+            $ref: '#/definitions/Publisher'
+  /publisher/{id}:
+    get:
+      description: Returns Publisher for the given id
+      operationId: getPublisher
+      parameters:
+        - name: id
+          in: path
+          description: ID of Publisher
+          required: true
+          type: integer
+      responses:
+        '200':
+          description: Publisher response
+          schema:
+            $ref: '#/definitions/Publisher'
+    delete:
+      description: deletes a single Publisher based on the ID supplied
+      operationId: deletePublisher
+      parameters:
+        - name: id
+          in: path
+          description: ID of Publisher to delete
+          required: true
+          type: integer
+      responses:
+        '200':
+          description: Publisher deleted
+  /publisher/search:
+    get:
+      description: Search Publisher
+      operationId: searchPublisher
+      parameters:
+        - name: publisherId
+          in: query
+          description: publisherId
+          required: false
+          type: string
+        - name: publisherName
+          in: query
+          description: publisherName
+          required: false
+          type: string
+        - name: company
+          in: query
+          description: company
+          required: false
+          type: string
+        - name: contactName
+          in: query
+          description: contactName
+          required: false
+          type: string
+        - name: contactNumber
+          in: query
+          description: contactNumber
+          required: false
+          type: string
+        - name: country
+          in: query
+          description: country
+          required: false
+          type: string
+        - name: primaryDomain
+          in: query
+          description: primaryDomain
+          required: false
+          type: string
+        - name: iabCategory
+          in: query
+          description: iabCategory
+          required: false
+          type: string
+        - name: address
+          in: query
+          description: address
+          required: false
+          type: string
+        - name: status
+          in: query
+          description: status
+          required: false
+          type: integer
+        - name: createdTimeStart
+          in: query
+          description: createdTimeStart
+          required: false
+          type: string
+        - name: createdTimeEnd
+          in: query
+          description: createdTimeEnd
+          required: false
+          type: string
+        - name: updatedTimeStart
+          in: query
+          description: updatedTimeStart
+          required: false
+          type: string
+        - name: updatedTimeEnd
+          in: query
+          description: updatedTimeEnd
+          required: false
+          type: string
+        - name: createdByUser
+          in: query
+          description: createdByUser
+          required: false
+          type: string
+        - name: updatedByUser
+          in: query
+          description: updatedByUser
+          required: false
+          type: string
+        - name: pageNo
+          in: query
+          description: pageNo
+          required: false
+          type: integer
+        - name: pageSize
+          in: query
+          description: pageSize
+          required: false
+          type: integer
+      responses:
+        '200':
+          description: List of Publisher
+          schema:
+            $ref: '#/definitions/PublisherList'
+  /publisher/search/keyword:
+    get:
+      description: Search Publisher by keyword
+      operationId: searchPublisherByKeyword
+      parameters:
+        - name: pageNo
+          in: query
+          description: pageNo
+          required: false
+          type: integer
+        - name: pageSize
+          in: query
+          description: pageSize
+          required: false
+          type: integer
+      responses:
+        '200':
+          description: List of Publisher
+          schema:
+            $ref: '#/definitions/PublisherList'            
+  /insertionOrder:
+    get:
+      description: |
+        List of InsertionOrder
+      parameters:
+        - name: pageNo
+          in: query
+          description: pageNo
+          required: false
+          type: integer
+        - name: pageSize
+          in: query
+          description: pageSize
+          required: false
+          type: integer
+      tags:
+        - Campaign
+      responses:
+        200:
+          description: List of InsertionOrder
+          schema:
+            $ref: '#/definitions/InsertionOrderList'          
+    post:
+      description: Creates a new InsertionOrder.
+      operationId: createInsertionOrder
+      parameters:
+        - name: insertionOrder
+          in: body
+          description: InsertionOrder to be created
+          required: true
+          schema:
+            $ref: '#/definitions/InsertionOrder'
+      responses:
+        '200':
+          description: created InsertionOrder
+          schema:
+            $ref: '#/definitions/InsertionOrder'
+    put:
+      description: Updates the InsertionOrder.
+      operationId: updateInsertionOrder
+      parameters:
+        - name: insertionOrder
+          in: body
+          description: InsertionOrder to be updated
+          required: true
+          schema:
+            $ref: '#/definitions/InsertionOrder'
+      responses:
+        '200':
+          description: updated InsertionOrder
+          schema:
+            $ref: '#/definitions/InsertionOrder'
+  /insertionOrder/{id}:
+    get:
+      description: Returns InsertionOrder for the given id
+      operationId: getInsertionOrder
+      parameters:
+        - name: id
+          in: path
+          description: ID of InsertionOrder
+          required: true
+          type: integer
+      responses:
+        '200':
+          description: InsertionOrder response
+          schema:
+            $ref: '#/definitions/InsertionOrder'
+    delete:
+      description: deletes a single InsertionOrder based on the ID supplied
+      operationId: deleteInsertionOrder
+      parameters:
+        - name: id
+          in: path
+          description: ID of InsertionOrder to delete
+          required: true
+          type: integer
+      responses:
+        '200':
+          description: InsertionOrder deleted
+  /insertionOrder/search:
+    get:
+      description: Search InsertionOrder
+      operationId: searchInsertionOrder
+      parameters:
+        - name: insertionOrderId
+          in: query
+          description: insertionOrderId
+          required: false
+          type: string
+        - name: campaignName
+          in: query
+          description: campaignName
+          required: false
+          type: string
+        - name: description
+          in: query
+          description: description
+          required: false
+          type: string
+        - name: campaignObjective
+          in: query
+          description: campaignObjective
+          required: false
+          type: string
+        - name: campaignStartDateStart
+          in: query
+          description: campaignStartDateStart
+          required: false
+          type: string
+        - name: campaignStartDateEnd
+          in: query
+          description: campaignStartDateEnd
+          required: false
+          type: string
+        - name: campaignEndDateStart
+          in: query
+          description: campaignEndDateStart
+          required: false
+          type: string
+        - name: campaignEndDateEnd
+          in: query
+          description: campaignEndDateEnd
+          required: false
+          type: string
+        - name: orderType
+          in: query
+          description: orderType
+          required: false
+          type: string
+        - name: spend
+          in: query
+          description: spend
+          required: false
+          type: number
+          format: float
+        - name: currency
+          in: query
+          description: currency
+          required: false
+          type: number
+          format: float
+        - name: revenueModel
+          in: query
+          description: revenueModel
+          required: false
+          type: string
+        - name: maximumImpressions
+          in: query
+          description: maximumImpressions
+          required: false
+          type: integer
+        - name: maximumSpend
+          in: query
+          description: maximumSpend
+          required: false
+          type: number
+          format: float
+        - name: currentImpressions
+          in: query
+          description: currentImpressions
+          required: false
+          type: integer
+        - name: currentSpend
+          in: query
+          description: currentSpend
+          required: false
+          type: number
+          format: float
+        - name: maximumSpendPerDay
+          in: query
+          description: maximumSpendPerDay
+          required: false
+          type: number
+          format: float
+        - name: pixelTrackingEnabled
+          in: query
+          description: pixelTrackingEnabled
+          required: false
+          type: boolean
+        - name: companionCampaign
+          in: query
+          description: companionCampaign
+          required: false
+          type: string
+        - name: campaignStatus
+          in: query
+          description: campaignStatus
+          required: false
+          type: string
+        - name: priority
+          in: query
+          description: priority
+          required: false
+          type: string
+        - name: comments
+          in: query
+          description: comments
+          required: false
+          type: string
+        - name: advertiserId
+          in: query
+          description: advertiserId
+          required: false
+          type: string
+        - name: status
+          in: query
+          description: status
+          required: false
+          type: integer
+        - name: createdTimeStart
+          in: query
+          description: createdTimeStart
+          required: false
+          type: string
+        - name: createdTimeEnd
+          in: query
+          description: createdTimeEnd
+          required: false
+          type: string
+        - name: updatedTimeStart
+          in: query
+          description: updatedTimeStart
+          required: false
+          type: string
+        - name: updatedTimeEnd
+          in: query
+          description: updatedTimeEnd
+          required: false
+          type: string
+        - name: createdByUser
+          in: query
+          description: createdByUser
+          required: false
+          type: string
+        - name: updatedByUser
+          in: query
+          description: updatedByUser
+          required: false
+          type: string
+        - name: pageNo
+          in: query
+          description: pageNo
+          required: false
+          type: integer
+        - name: pageSize
+          in: query
+          description: pageSize
+          required: false
+          type: integer
+      responses:
+        '200':
+          description: List of InsertionOrder
+          schema:
+            $ref: '#/definitions/InsertionOrderList'
+  /insertionOrder/search/keyword:
+    get:
+      description: Search InsertionOrder by keyword
+      operationId: searchInsertionOrderByKeyword
+      parameters:
+        - name: pageNo
+          in: query
+          description: pageNo
+          required: false
+          type: integer
+        - name: pageSize
+          in: query
+          description: pageSize
+          required: false
+          type: integer
+      responses:
+        '200':
+          description: List of InsertionOrder
+          schema:
+            $ref: '#/definitions/InsertionOrderList'            
+  /lineItem:
+    get:
+      description: |
+        List of LineItem
+      parameters:
+        - name: pageNo
+          in: query
+          description: pageNo
+          required: false
+          type: integer
+        - name: pageSize
+          in: query
+          description: pageSize
+          required: false
+          type: integer
+      tags:
+        - Campaign
+      responses:
+        200:
+          description: List of LineItem
+          schema:
+            $ref: '#/definitions/LineItemList'          
+    post:
+      description: Creates a new LineItem.
+      operationId: createLineItem
+      parameters:
+        - name: lineItem
+          in: body
+          description: LineItem to be created
+          required: true
+          schema:
+            $ref: '#/definitions/LineItem'
+      responses:
+        '200':
+          description: created LineItem
+          schema:
+            $ref: '#/definitions/LineItem'
+    put:
+      description: Updates the LineItem.
+      operationId: updateLineItem
+      parameters:
+        - name: lineItem
+          in: body
+          description: LineItem to be updated
+          required: true
+          schema:
+            $ref: '#/definitions/LineItem'
+      responses:
+        '200':
+          description: updated LineItem
+          schema:
+            $ref: '#/definitions/LineItem'
+  /lineItem/{id}:
+    get:
+      description: Returns LineItem for the given id
+      operationId: getLineItem
+      parameters:
+        - name: id
+          in: path
+          description: ID of LineItem
+          required: true
+          type: integer
+      responses:
+        '200':
+          description: LineItem response
+          schema:
+            $ref: '#/definitions/LineItem'
+    delete:
+      description: deletes a single LineItem based on the ID supplied
+      operationId: deleteLineItem
+      parameters:
+        - name: id
+          in: path
+          description: ID of LineItem to delete
+          required: true
+          type: integer
+      responses:
+        '200':
+          description: LineItem deleted
+  /lineItem/search:
+    get:
+      description: Search LineItem
+      operationId: searchLineItem
+      parameters:
+        - name: campaignId
+          in: query
+          description: campaignId
+          required: false
+          type: string
+        - name: advertiserId
+          in: query
+          description: advertiserId
+          required: false
+          type: string
+        - name: bannerName
+          in: query
+          description: bannerName
+          required: false
+          type: string
+        - name: description
+          in: query
+          description: description
+          required: false
+          type: string
+        - name: adType
+          in: query
+          description: adType
+          required: false
+          type: string
+        - name: weightage
+          in: query
+          description: weightage
+          required: false
+          type: integer
+        - name: bannerDimension
+          in: query
+          description: bannerDimension
+          required: false
+          type: string
+        - name: assetUrl
+          in: query
+          description: assetUrl
+          required: false
+          type: string
+        - name: assetText
+          in: query
+          description: assetText
+          required: false
+          type: string
+        - name: clickUrl
+          in: query
+          description: clickUrl
+          required: false
+          type: string
+        - name: callbackUrl
+          in: query
+          description: callbackUrl
+          required: false
+          type: string
+        - name: deliveryChannel
+          in: query
+          description: deliveryChannel
+          required: false
+          type: string
+        - name: adTag
+          in: query
+          description: adTag
+          required: false
+          type: string
+        - name: impressionsCounter
+          in: query
+          description: impressionsCounter
+          required: false
+          type: integer
+        - name: bidsCounter
+          in: query
+          description: bidsCounter
+          required: false
+          type: integer
+        - name: currentSpend
+          in: query
+          description: currentSpend
+          required: false
+          type: number
+          format: float
+        - name: nativeId
+          in: query
+          description: nativeId
+          required: false
+          type: string
+        - name: videoId
+          in: query
+          description: videoId
+          required: false
+          type: string
+        - name: bannerStatus
+          in: query
+          description: bannerStatus
+          required: false
+          type: string
+        - name: status
+          in: query
+          description: status
+          required: false
+          type: integer
+        - name: createdTimeStart
+          in: query
+          description: createdTimeStart
+          required: false
+          type: string
+        - name: createdTimeEnd
+          in: query
+          description: createdTimeEnd
+          required: false
+          type: string
+        - name: updatedTimeStart
+          in: query
+          description: updatedTimeStart
+          required: false
+          type: string
+        - name: updatedTimeEnd
+          in: query
+          description: updatedTimeEnd
+          required: false
+          type: string
+        - name: createdByUser
+          in: query
+          description: createdByUser
+          required: false
+          type: string
+        - name: updatedByUser
+          in: query
+          description: updatedByUser
+          required: false
+          type: string
+        - name: pageNo
+          in: query
+          description: pageNo
+          required: false
+          type: integer
+        - name: pageSize
+          in: query
+          description: pageSize
+          required: false
+          type: integer
+      responses:
+        '200':
+          description: List of LineItem
+          schema:
+            $ref: '#/definitions/LineItemList'
+  /lineItem/search/keyword:
+    get:
+      description: Search LineItem by keyword
+      operationId: searchLineItemByKeyword
+      parameters:
+        - name: pageNo
+          in: query
+          description: pageNo
+          required: false
+          type: integer
+        - name: pageSize
+          in: query
+          description: pageSize
+          required: false
+          type: integer
+      responses:
+        '200':
+          description: List of LineItem
+          schema:
+            $ref: '#/definitions/LineItemList'            
+  /nativeAd:
+    get:
+      description: |
+        List of NativeAd
+      parameters:
+        - name: pageNo
+          in: query
+          description: pageNo
+          required: false
+          type: integer
+        - name: pageSize
+          in: query
+          description: pageSize
+          required: false
+          type: integer
+      tags:
+        - Campaign
+      responses:
+        200:
+          description: List of NativeAd
+          schema:
+            $ref: '#/definitions/NativeAdList'          
+    post:
+      description: Creates a new NativeAd.
+      operationId: createNativeAd
+      parameters:
+        - name: nativeAd
+          in: body
+          description: NativeAd to be created
+          required: true
+          schema:
+            $ref: '#/definitions/NativeAd'
+      responses:
+        '200':
+          description: created NativeAd
+          schema:
+            $ref: '#/definitions/NativeAd'
+    put:
+      description: Updates the NativeAd.
+      operationId: updateNativeAd
+      parameters:
+        - name: nativeAd
+          in: body
+          description: NativeAd to be updated
+          required: true
+          schema:
+            $ref: '#/definitions/NativeAd'
+      responses:
+        '200':
+          description: updated NativeAd
+          schema:
+            $ref: '#/definitions/NativeAd'
+  /nativeAd/{id}:
+    get:
+      description: Returns NativeAd for the given id
+      operationId: getNativeAd
+      parameters:
+        - name: id
+          in: path
+          description: ID of NativeAd
+          required: true
+          type: integer
+      responses:
+        '200':
+          description: NativeAd response
+          schema:
+            $ref: '#/definitions/NativeAd'
+    delete:
+      description: deletes a single NativeAd based on the ID supplied
+      operationId: deleteNativeAd
+      parameters:
+        - name: id
+          in: path
+          description: ID of NativeAd to delete
+          required: true
+          type: integer
+      responses:
+        '200':
+          description: NativeAd deleted
+  /nativeAd/search:
+    get:
+      description: Search NativeAd
+      operationId: searchNativeAd
+      parameters:
+        - name: title
+          in: query
+          description: title
+          required: false
+          type: string
+        - name: description
+          in: query
+          description: description
+          required: false
+          type: string
+        - name: highlightedText
+          in: query
+          description: highlightedText
+          required: false
+          type: string
+        - name: icon
+          in: query
+          description: icon
+          required: false
+          type: string
+        - name: button
+          in: query
+          description: button
+          required: false
+          type: string
+        - name: actionUrl
+          in: query
+          description: actionUrl
+          required: false
+          type: string
+        - name: price
+          in: query
+          description: price
+          required: false
+          type: number
+          format: float
+        - name: rating
+          in: query
+          description: rating
+          required: false
+          type: integer
+        - name: sponsoredText
+          in: query
+          description: sponsoredText
+          required: false
+          type: string
+        - name: sponsoredImageUrl
+          in: query
+          description: sponsoredImageUrl
+          required: false
+          type: string
+        - name: pageNo
+          in: query
+          description: pageNo
+          required: false
+          type: integer
+        - name: pageSize
+          in: query
+          description: pageSize
+          required: false
+          type: integer
+      responses:
+        '200':
+          description: List of NativeAd
+          schema:
+            $ref: '#/definitions/NativeAdList'
+  /nativeAd/search/keyword:
+    get:
+      description: Search NativeAd by keyword
+      operationId: searchNativeAdByKeyword
+      parameters:
+        - name: pageNo
+          in: query
+          description: pageNo
+          required: false
+          type: integer
+        - name: pageSize
+          in: query
+          description: pageSize
+          required: false
+          type: integer
+      responses:
+        '200':
+          description: List of NativeAd
+          schema:
+            $ref: '#/definitions/NativeAdList'            
+  /video:
+    get:
+      description: |
+        List of Video
+      parameters:
+        - name: pageNo
+          in: query
+          description: pageNo
+          required: false
+          type: integer
+        - name: pageSize
+          in: query
+          description: pageSize
+          required: false
+          type: integer
+      tags:
+        - Campaign
+      responses:
+        200:
+          description: List of Video
+          schema:
+            $ref: '#/definitions/VideoList'          
+    post:
+      description: Creates a new Video.
+      operationId: createVideo
+      parameters:
+        - name: video
+          in: body
+          description: Video to be created
+          required: true
+          schema:
+            $ref: '#/definitions/Video'
+      responses:
+        '200':
+          description: created Video
+          schema:
+            $ref: '#/definitions/Video'
+    put:
+      description: Updates the Video.
+      operationId: updateVideo
+      parameters:
+        - name: video
+          in: body
+          description: Video to be updated
+          required: true
+          schema:
+            $ref: '#/definitions/Video'
+      responses:
+        '200':
+          description: updated Video
+          schema:
+            $ref: '#/definitions/Video'
+  /video/{id}:
+    get:
+      description: Returns Video for the given id
+      operationId: getVideo
+      parameters:
+        - name: id
+          in: path
+          description: ID of Video
+          required: true
+          type: integer
+      responses:
+        '200':
+          description: Video response
+          schema:
+            $ref: '#/definitions/Video'
+    delete:
+      description: deletes a single Video based on the ID supplied
+      operationId: deleteVideo
+      parameters:
+        - name: id
+          in: path
+          description: ID of Video to delete
+          required: true
+          type: integer
+      responses:
+        '200':
+          description: Video deleted
+  /video/search:
+    get:
+      description: Search Video
+      operationId: searchVideo
+      parameters:
+        - name: title
+          in: query
+          description: title
+          required: false
+          type: string
+        - name: videoUrl
+          in: query
+          description: videoUrl
+          required: false
+          type: string
+        - name: videoType
+          in: query
+          description: videoType
+          required: false
+          type: string
+        - name: delivery
+          in: query
+          description: delivery
+          required: false
+          type: string
+        - name: bitrate
+          in: query
+          description: bitrate
+          required: false
+          type: string
+        - name: width
+          in: query
+          description: width
+          required: false
+          type: integer
+        - name: height
+          in: query
+          description: height
+          required: false
+          type: integer
+        - name: duration
+          in: query
+          description: duration
+          required: false
+          type: number
+          format: float
+        - name: pageNo
+          in: query
+          description: pageNo
+          required: false
+          type: integer
+        - name: pageSize
+          in: query
+          description: pageSize
+          required: false
+          type: integer
+      responses:
+        '200':
+          description: List of Video
+          schema:
+            $ref: '#/definitions/VideoList'
+  /video/search/keyword:
+    get:
+      description: Search Video by keyword
+      operationId: searchVideoByKeyword
+      parameters:
+        - name: pageNo
+          in: query
+          description: pageNo
+          required: false
+          type: integer
+        - name: pageSize
+          in: query
+          description: pageSize
+          required: false
+          type: integer
+      responses:
+        '200':
+          description: List of Video
+          schema:
+            $ref: '#/definitions/VideoList'            
+  /digitalProperty:
+    get:
+      description: |
+        List of DigitalProperty
+      parameters:
+        - name: pageNo
+          in: query
+          description: pageNo
+          required: false
+          type: integer
+        - name: pageSize
+          in: query
+          description: pageSize
+          required: false
+          type: integer
+      tags:
+        - Publisher
+      responses:
+        200:
+          description: List of DigitalProperty
+          schema:
+            $ref: '#/definitions/DigitalPropertyList'          
+    post:
+      description: Creates a new DigitalProperty.
+      operationId: createDigitalProperty
+      parameters:
+        - name: digitalProperty
+          in: body
+          description: DigitalProperty to be created
+          required: true
+          schema:
+            $ref: '#/definitions/DigitalProperty'
+      responses:
+        '200':
+          description: created DigitalProperty
+          schema:
+            $ref: '#/definitions/DigitalProperty'
+    put:
+      description: Updates the DigitalProperty.
+      operationId: updateDigitalProperty
+      parameters:
+        - name: digitalProperty
+          in: body
+          description: DigitalProperty to be updated
+          required: true
+          schema:
+            $ref: '#/definitions/DigitalProperty'
+      responses:
+        '200':
+          description: updated DigitalProperty
+          schema:
+            $ref: '#/definitions/DigitalProperty'
+  /digitalProperty/{id}:
+    get:
+      description: Returns DigitalProperty for the given id
+      operationId: getDigitalProperty
+      parameters:
+        - name: id
+          in: path
+          description: ID of DigitalProperty
+          required: true
+          type: integer
+      responses:
+        '200':
+          description: DigitalProperty response
+          schema:
+            $ref: '#/definitions/DigitalProperty'
+    delete:
+      description: deletes a single DigitalProperty based on the ID supplied
+      operationId: deleteDigitalProperty
+      parameters:
+        - name: id
+          in: path
+          description: ID of DigitalProperty to delete
+          required: true
+          type: integer
+      responses:
+        '200':
+          description: DigitalProperty deleted
+  /digitalProperty/search:
+    get:
+      description: Search DigitalProperty
+      operationId: searchDigitalProperty
+      parameters:
+        - name: propertyName
+          in: query
+          description: propertyName
+          required: false
+          type: string
+        - name: description
+          in: query
+          description: description
+          required: false
+          type: string
+        - name: type
+          in: query
+          description: type
+          required: false
+          type: string
+        - name: domainURL
+          in: query
+          description: domainURL
+          required: false
+          type: string
+        - name: publisherId
+          in: query
+          description: publisherId
+          required: false
+          type: string
+        - name: IABCategory
+          in: query
+          description: IABCategory
+          required: false
+          type: string
+        - name: IABSubCategory
+          in: query
+          description: IABSubCategory
+          required: false
+          type: string
+        - name: country
+          in: query
+          description: country
+          required: false
+          type: string
+        - name: language
+          in: query
+          description: language
+          required: false
+          type: string
+        - name: status
+          in: query
+          description: status
+          required: false
+          type: integer
+        - name: createdTimeStart
+          in: query
+          description: createdTimeStart
+          required: false
+          type: string
+        - name: createdTimeEnd
+          in: query
+          description: createdTimeEnd
+          required: false
+          type: string
+        - name: updatedTimeStart
+          in: query
+          description: updatedTimeStart
+          required: false
+          type: string
+        - name: updatedTimeEnd
+          in: query
+          description: updatedTimeEnd
+          required: false
+          type: string
+        - name: createdByUser
+          in: query
+          description: createdByUser
+          required: false
+          type: string
+        - name: updatedByUser
+          in: query
+          description: updatedByUser
+          required: false
+          type: string
+        - name: pageNo
+          in: query
+          description: pageNo
+          required: false
+          type: integer
+        - name: pageSize
+          in: query
+          description: pageSize
+          required: false
+          type: integer
+      responses:
+        '200':
+          description: List of DigitalProperty
+          schema:
+            $ref: '#/definitions/DigitalPropertyList'
+  /digitalProperty/search/keyword:
+    get:
+      description: Search DigitalProperty by keyword
+      operationId: searchDigitalPropertyByKeyword
+      parameters:
+        - name: pageNo
+          in: query
+          description: pageNo
+          required: false
+          type: integer
+        - name: pageSize
+          in: query
+          description: pageSize
+          required: false
+          type: integer
+      responses:
+        '200':
+          description: List of DigitalProperty
+          schema:
+            $ref: '#/definitions/DigitalPropertyList'            
+  /inventory:
+    get:
+      description: |
+        List of Inventory
+      parameters:
+        - name: pageNo
+          in: query
+          description: pageNo
+          required: false
+          type: integer
+        - name: pageSize
+          in: query
+          description: pageSize
+          required: false
+          type: integer
+      tags:
+        - Publisher
+      responses:
+        200:
+          description: List of Inventory
+          schema:
+            $ref: '#/definitions/InventoryList'          
+    post:
+      description: Creates a new Inventory.
+      operationId: createInventory
+      parameters:
+        - name: inventory
+          in: body
+          description: Inventory to be created
+          required: true
+          schema:
+            $ref: '#/definitions/Inventory'
+      responses:
+        '200':
+          description: created Inventory
+          schema:
+            $ref: '#/definitions/Inventory'
+    put:
+      description: Updates the Inventory.
+      operationId: updateInventory
+      parameters:
+        - name: inventory
+          in: body
+          description: Inventory to be updated
+          required: true
+          schema:
+            $ref: '#/definitions/Inventory'
+      responses:
+        '200':
+          description: updated Inventory
+          schema:
+            $ref: '#/definitions/Inventory'
+  /inventory/{id}:
+    get:
+      description: Returns Inventory for the given id
+      operationId: getInventory
+      parameters:
+        - name: id
+          in: path
+          description: ID of Inventory
+          required: true
+          type: integer
+      responses:
+        '200':
+          description: Inventory response
+          schema:
+            $ref: '#/definitions/Inventory'
+    delete:
+      description: deletes a single Inventory based on the ID supplied
+      operationId: deleteInventory
+      parameters:
+        - name: id
+          in: path
+          description: ID of Inventory to delete
+          required: true
+          type: integer
+      responses:
+        '200':
+          description: Inventory deleted
+  /inventory/search:
+    get:
+      description: Search Inventory
+      operationId: searchInventory
+      parameters:
+        - name: zoneID
+          in: query
+          description: zoneID
+          required: false
+          type: string
+        - name: digitalPropertyId
+          in: query
+          description: digitalPropertyId
+          required: false
+          type: string
+        - name: inventoryName
+          in: query
+          description: inventoryName
+          required: false
+          type: string
+        - name: description
+          in: query
+          description: description
+          required: false
+          type: string
+        - name: zoneType
+          in: query
+          description: zoneType
+          required: false
+          type: string
+        - name: adType
+          in: query
+          description: adType
+          required: false
+          type: string
+        - name: adTemplateID
+          in: query
+          description: adTemplateID
+          required: false
+          type: string
+        - name: adWidth
+          in: query
+          description: adWidth
+          required: false
+          type: integer
+        - name: adHeight
+          in: query
+          description: adHeight
+          required: false
+          type: integer
+        - name: adInvocationTag
+          in: query
+          description: adInvocationTag
+          required: false
+          type: string
+        - name: passbackAdTag
+          in: query
+          description: passbackAdTag
+          required: false
+          type: string
+        - name: floorPrice
+          in: query
+          description: floorPrice
+          required: false
+          type: integer
+        - name: totalRequests
+          in: query
+          description: totalRequests
+          required: false
+          type: integer
+        - name: totalImpressions
+          in: query
+          description: totalImpressions
+          required: false
+          type: integer
+        - name: totalRevenues
+          in: query
+          description: totalRevenues
+          required: false
+          type: number
+          format: float
+        - name: keywords
+          in: query
+          description: keywords
+          required: false
+          type: string
+        - name: status
+          in: query
+          description: status
+          required: false
+          type: integer
+        - name: createdTimeStart
+          in: query
+          description: createdTimeStart
+          required: false
+          type: string
+        - name: createdTimeEnd
+          in: query
+          description: createdTimeEnd
+          required: false
+          type: string
+        - name: updatedTimeStart
+          in: query
+          description: updatedTimeStart
+          required: false
+          type: string
+        - name: updatedTimeEnd
+          in: query
+          description: updatedTimeEnd
+          required: false
+          type: string
+        - name: createdByUser
+          in: query
+          description: createdByUser
+          required: false
+          type: string
+        - name: updatedByUser
+          in: query
+          description: updatedByUser
+          required: false
+          type: string
+        - name: pageNo
+          in: query
+          description: pageNo
+          required: false
+          type: integer
+        - name: pageSize
+          in: query
+          description: pageSize
+          required: false
+          type: integer
+      responses:
+        '200':
+          description: List of Inventory
+          schema:
+            $ref: '#/definitions/InventoryList'
+  /inventory/search/keyword:
+    get:
+      description: Search Inventory by keyword
+      operationId: searchInventoryByKeyword
+      parameters:
+        - name: pageNo
+          in: query
+          description: pageNo
+          required: false
+          type: integer
+        - name: pageSize
+          in: query
+          description: pageSize
+          required: false
+          type: integer
+      responses:
+        '200':
+          description: List of Inventory
+          schema:
+            $ref: '#/definitions/InventoryList'            
+  /inventorySpace:
+    get:
+      description: |
+        List of InventorySpace
+      parameters:
+        - name: pageNo
+          in: query
+          description: pageNo
+          required: false
+          type: integer
+        - name: pageSize
+          in: query
+          description: pageSize
+          required: false
+          type: integer
+      tags:
+        - Publisher
+      responses:
+        200:
+          description: List of InventorySpace
+          schema:
+            $ref: '#/definitions/InventorySpaceList'          
+    post:
+      description: Creates a new InventorySpace.
+      operationId: createInventorySpace
+      parameters:
+        - name: inventorySpace
+          in: body
+          description: InventorySpace to be created
+          required: true
+          schema:
+            $ref: '#/definitions/InventorySpace'
+      responses:
+        '200':
+          description: created InventorySpace
+          schema:
+            $ref: '#/definitions/InventorySpace'
+    put:
+      description: Updates the InventorySpace.
+      operationId: updateInventorySpace
+      parameters:
+        - name: inventorySpace
+          in: body
+          description: InventorySpace to be updated
+          required: true
+          schema:
+            $ref: '#/definitions/InventorySpace'
+      responses:
+        '200':
+          description: updated InventorySpace
+          schema:
+            $ref: '#/definitions/InventorySpace'
+  /inventorySpace/{id}:
+    get:
+      description: Returns InventorySpace for the given id
+      operationId: getInventorySpace
+      parameters:
+        - name: id
+          in: path
+          description: ID of InventorySpace
+          required: true
+          type: integer
+      responses:
+        '200':
+          description: InventorySpace response
+          schema:
+            $ref: '#/definitions/InventorySpace'
+    delete:
+      description: deletes a single InventorySpace based on the ID supplied
+      operationId: deleteInventorySpace
+      parameters:
+        - name: id
+          in: path
+          description: ID of InventorySpace to delete
+          required: true
+          type: integer
+      responses:
+        '200':
+          description: InventorySpace deleted
+  /inventorySpace/search:
+    get:
+      description: Search InventorySpace
+      operationId: searchInventorySpace
+      parameters:
+        - name: inventoryId
+          in: query
+          description: inventoryId
+          required: false
+          type: string
+        - name: estimatedValue
+          in: query
+          description: estimatedValue
+          required: false
+          type: number
+          format: float
+        - name: units
+          in: query
+          description: units
+          required: false
+          type: string
+        - name: pageNo
+          in: query
+          description: pageNo
+          required: false
+          type: integer
+        - name: pageSize
+          in: query
+          description: pageSize
+          required: false
+          type: integer
+      responses:
+        '200':
+          description: List of InventorySpace
+          schema:
+            $ref: '#/definitions/InventorySpaceList'
+  /inventorySpace/search/keyword:
+    get:
+      description: Search InventorySpace by keyword
+      operationId: searchInventorySpaceByKeyword
+      parameters:
+        - name: pageNo
+          in: query
+          description: pageNo
+          required: false
+          type: integer
+        - name: pageSize
+          in: query
+          description: pageSize
+          required: false
+          type: integer
+      responses:
+        '200':
+          description: List of InventorySpace
+          schema:
+            $ref: '#/definitions/InventorySpaceList'            
+  /adTemplates:
+    get:
+      description: |
+        List of AdTemplates
+      parameters:
+        - name: pageNo
+          in: query
+          description: pageNo
+          required: false
+          type: integer
+        - name: pageSize
+          in: query
+          description: pageSize
+          required: false
+          type: integer
+      tags:
+        - Common
+      responses:
+        200:
+          description: List of AdTemplates
+          schema:
+            $ref: '#/definitions/AdTemplatesList'          
+    post:
+      description: Creates a new AdTemplates.
+      operationId: createAdTemplates
+      parameters:
+        - name: adTemplates
+          in: body
+          description: AdTemplates to be created
+          required: true
+          schema:
+            $ref: '#/definitions/AdTemplates'
+      responses:
+        '200':
+          description: created AdTemplates
+          schema:
+            $ref: '#/definitions/AdTemplates'
+    put:
+      description: Updates the AdTemplates.
+      operationId: updateAdTemplates
+      parameters:
+        - name: adTemplates
+          in: body
+          description: AdTemplates to be updated
+          required: true
+          schema:
+            $ref: '#/definitions/AdTemplates'
+      responses:
+        '200':
+          description: updated AdTemplates
+          schema:
+            $ref: '#/definitions/AdTemplates'
+  /adTemplates/{id}:
+    get:
+      description: Returns AdTemplates for the given id
+      operationId: getAdTemplates
+      parameters:
+        - name: id
+          in: path
+          description: ID of AdTemplates
+          required: true
+          type: integer
+      responses:
+        '200':
+          description: AdTemplates response
+          schema:
+            $ref: '#/definitions/AdTemplates'
+    delete:
+      description: deletes a single AdTemplates based on the ID supplied
+      operationId: deleteAdTemplates
+      parameters:
+        - name: id
+          in: path
+          description: ID of AdTemplates to delete
+          required: true
+          type: integer
+      responses:
+        '200':
+          description: AdTemplates deleted
+  /adTemplates/search:
+    get:
+      description: Search AdTemplates
+      operationId: searchAdTemplates
+      parameters:
+        - name: adTemplateID
+          in: query
+          description: adTemplateID
+          required: false
+          type: string
+        - name: templateName
+          in: query
+          description: templateName
+          required: false
+          type: string
+        - name: isMobileFlag
+          in: query
+          description: isMobileFlag
+          required: false
+          type: integer
+        - name: width
+          in: query
+          description: width
+          required: false
+          type: integer
+        - name: height
+          in: query
+          description: height
+          required: false
+          type: integer
+        - name: status
+          in: query
+          description: status
+          required: false
+          type: integer
+        - name: createdTimeStart
+          in: query
+          description: createdTimeStart
+          required: false
+          type: string
+        - name: createdTimeEnd
+          in: query
+          description: createdTimeEnd
+          required: false
+          type: string
+        - name: updatedTimeStart
+          in: query
+          description: updatedTimeStart
+          required: false
+          type: string
+        - name: updatedTimeEnd
+          in: query
+          description: updatedTimeEnd
+          required: false
+          type: string
+        - name: createdByUser
+          in: query
+          description: createdByUser
+          required: false
+          type: string
+        - name: updatedByUser
+          in: query
+          description: updatedByUser
+          required: false
+          type: string
+        - name: pageNo
+          in: query
+          description: pageNo
+          required: false
+          type: integer
+        - name: pageSize
+          in: query
+          description: pageSize
+          required: false
+          type: integer
+      responses:
+        '200':
+          description: List of AdTemplates
+          schema:
+            $ref: '#/definitions/AdTemplatesList'
+  /adTemplates/search/keyword:
+    get:
+      description: Search AdTemplates by keyword
+      operationId: searchAdTemplatesByKeyword
+      parameters:
+        - name: pageNo
+          in: query
+          description: pageNo
+          required: false
+          type: integer
+        - name: pageSize
+          in: query
+          description: pageSize
+          required: false
+          type: integer
+      responses:
+        '200':
+          description: List of AdTemplates
+          schema:
+            $ref: '#/definitions/AdTemplatesList'            
+  /bannerAdzones:
+    get:
+      description: |
+        List of BannerAdzones
+      parameters:
+        - name: pageNo
+          in: query
+          description: pageNo
+          required: false
+          type: integer
+        - name: pageSize
+          in: query
+          description: pageSize
+          required: false
+          type: integer
+      tags:
+        - Campaign
+      responses:
+        200:
+          description: List of BannerAdzones
+          schema:
+            $ref: '#/definitions/BannerAdzonesList'          
+    post:
+      description: Creates a new BannerAdzones.
+      operationId: createBannerAdzones
+      parameters:
+        - name: bannerAdzones
+          in: body
+          description: BannerAdzones to be created
+          required: true
+          schema:
+            $ref: '#/definitions/BannerAdzones'
+      responses:
+        '200':
+          description: created BannerAdzones
+          schema:
+            $ref: '#/definitions/BannerAdzones'
+    put:
+      description: Updates the BannerAdzones.
+      operationId: updateBannerAdzones
+      parameters:
+        - name: bannerAdzones
+          in: body
+          description: BannerAdzones to be updated
+          required: true
+          schema:
+            $ref: '#/definitions/BannerAdzones'
+      responses:
+        '200':
+          description: updated BannerAdzones
+          schema:
+            $ref: '#/definitions/BannerAdzones'
+  /bannerAdzones/{id}:
+    get:
+      description: Returns BannerAdzones for the given id
+      operationId: getBannerAdzones
+      parameters:
+        - name: id
+          in: path
+          description: ID of BannerAdzones
+          required: true
+          type: integer
+      responses:
+        '200':
+          description: BannerAdzones response
+          schema:
+            $ref: '#/definitions/BannerAdzones'
+    delete:
+      description: deletes a single BannerAdzones based on the ID supplied
+      operationId: deleteBannerAdzones
+      parameters:
+        - name: id
+          in: path
+          description: ID of BannerAdzones to delete
+          required: true
+          type: integer
+      responses:
+        '200':
+          description: BannerAdzones deleted
+  /bannerAdzones/search:
+    get:
+      description: Search BannerAdzones
+      operationId: searchBannerAdzones
+      parameters:
+        - name: bannerID
+          in: query
+          description: bannerID
+          required: false
+          type: string
+        - name: zoneID
+          in: query
+          description: zoneID
+          required: false
+          type: string
+        - name: campaignID
+          in: query
+          description: campaignID
+          required: false
+          type: string
+        - name: pageNo
+          in: query
+          description: pageNo
+          required: false
+          type: integer
+        - name: pageSize
+          in: query
+          description: pageSize
+          required: false
+          type: integer
+      responses:
+        '200':
+          description: List of BannerAdzones
+          schema:
+            $ref: '#/definitions/BannerAdzonesList'
+  /bannerAdzones/search/keyword:
+    get:
+      description: Search BannerAdzones by keyword
+      operationId: searchBannerAdzonesByKeyword
+      parameters:
+        - name: pageNo
+          in: query
+          description: pageNo
+          required: false
+          type: integer
+        - name: pageSize
+          in: query
+          description: pageSize
+          required: false
+          type: integer
+      responses:
+        '200':
+          description: List of BannerAdzones
+          schema:
+            $ref: '#/definitions/BannerAdzonesList'            
+  /bannerAdTarget:
+    get:
+      description: |
+        List of BannerAdTarget
+      parameters:
+        - name: pageNo
+          in: query
+          description: pageNo
+          required: false
+          type: integer
+        - name: pageSize
+          in: query
+          description: pageSize
+          required: false
+          type: integer
+      tags:
+        - Campaign
+      responses:
+        200:
+          description: List of BannerAdTarget
+          schema:
+            $ref: '#/definitions/BannerAdTargetList'          
+    post:
+      description: Creates a new BannerAdTarget.
+      operationId: createBannerAdTarget
+      parameters:
+        - name: bannerAdTarget
+          in: body
+          description: BannerAdTarget to be created
+          required: true
+          schema:
+            $ref: '#/definitions/BannerAdTarget'
+      responses:
+        '200':
+          description: created BannerAdTarget
+          schema:
+            $ref: '#/definitions/BannerAdTarget'
+    put:
+      description: Updates the BannerAdTarget.
+      operationId: updateBannerAdTarget
+      parameters:
+        - name: bannerAdTarget
+          in: body
+          description: BannerAdTarget to be updated
+          required: true
+          schema:
+            $ref: '#/definitions/BannerAdTarget'
+      responses:
+        '200':
+          description: updated BannerAdTarget
+          schema:
+            $ref: '#/definitions/BannerAdTarget'
+  /bannerAdTarget/{id}:
+    get:
+      description: Returns BannerAdTarget for the given id
+      operationId: getBannerAdTarget
+      parameters:
+        - name: id
+          in: path
+          description: ID of BannerAdTarget
+          required: true
+          type: integer
+      responses:
+        '200':
+          description: BannerAdTarget response
+          schema:
+            $ref: '#/definitions/BannerAdTarget'
+    delete:
+      description: deletes a single BannerAdTarget based on the ID supplied
+      operationId: deleteBannerAdTarget
+      parameters:
+        - name: id
+          in: path
+          description: ID of BannerAdTarget to delete
+          required: true
+          type: integer
+      responses:
+        '200':
+          description: BannerAdTarget deleted
+  /bannerAdTarget/search:
+    get:
+      description: Search BannerAdTarget
+      operationId: searchBannerAdTarget
+      parameters:
+        - name: bannerID
+          in: query
+          description: bannerID
+          required: false
+          type: string
+        - name: campaignID
+          in: query
+          description: campaignID
+          required: false
+          type: string
+        - name: geo
+          in: query
+          description: geo
+          required: false
+          type: string
+        - name: state
+          in: query
+          description: state
+          required: false
+          type: string
+        - name: city
+          in: query
+          description: city
+          required: false
+          type: string
+        - name: ageGroup
+          in: query
+          description: ageGroup
+          required: false
+          type: string
+        - name: gender
+          in: query
+          description: gender
+          required: false
+          type: string
+        - name: category
+          in: query
+          description: category
+          required: false
+          type: string
+        - name: keyword
+          in: query
+          description: keyword
+          required: false
+          type: string
+        - name: status
+          in: query
+          description: status
+          required: false
+          type: integer
+        - name: pageNo
+          in: query
+          description: pageNo
+          required: false
+          type: integer
+        - name: pageSize
+          in: query
+          description: pageSize
+          required: false
+          type: integer
+      responses:
+        '200':
+          description: List of BannerAdTarget
+          schema:
+            $ref: '#/definitions/BannerAdTargetList'
+  /bannerAdTarget/search/keyword:
+    get:
+      description: Search BannerAdTarget by keyword
+      operationId: searchBannerAdTargetByKeyword
+      parameters:
+        - name: pageNo
+          in: query
+          description: pageNo
+          required: false
+          type: integer
+        - name: pageSize
+          in: query
+          description: pageSize
+          required: false
+          type: integer
+      responses:
+        '200':
+          description: List of BannerAdTarget
+          schema:
+            $ref: '#/definitions/BannerAdTargetList'            
+  /industryCategory:
+    get:
+      description: |
+        List of IndustryCategory
+      parameters:
+        - name: pageNo
+          in: query
+          description: pageNo
+          required: false
+          type: integer
+        - name: pageSize
+          in: query
+          description: pageSize
+          required: false
+          type: integer
+      tags:
+        - Common
+      responses:
+        200:
+          description: List of IndustryCategory
+          schema:
+            $ref: '#/definitions/IndustryCategoryList'          
+    post:
+      description: Creates a new IndustryCategory.
+      operationId: createIndustryCategory
+      parameters:
+        - name: industryCategory
+          in: body
+          description: IndustryCategory to be created
+          required: true
+          schema:
+            $ref: '#/definitions/IndustryCategory'
+      responses:
+        '200':
+          description: created IndustryCategory
+          schema:
+            $ref: '#/definitions/IndustryCategory'
+    put:
+      description: Updates the IndustryCategory.
+      operationId: updateIndustryCategory
+      parameters:
+        - name: industryCategory
+          in: body
+          description: IndustryCategory to be updated
+          required: true
+          schema:
+            $ref: '#/definitions/IndustryCategory'
+      responses:
+        '200':
+          description: updated IndustryCategory
+          schema:
+            $ref: '#/definitions/IndustryCategory'
+  /industryCategory/{id}:
+    get:
+      description: Returns IndustryCategory for the given id
+      operationId: getIndustryCategory
+      parameters:
+        - name: id
+          in: path
+          description: ID of IndustryCategory
+          required: true
+          type: integer
+      responses:
+        '200':
+          description: IndustryCategory response
+          schema:
+            $ref: '#/definitions/IndustryCategory'
+    delete:
+      description: deletes a single IndustryCategory based on the ID supplied
+      operationId: deleteIndustryCategory
+      parameters:
+        - name: id
+          in: path
+          description: ID of IndustryCategory to delete
+          required: true
+          type: integer
+      responses:
+        '200':
+          description: IndustryCategory deleted
+  /industryCategory/search:
+    get:
+      description: Search IndustryCategory
+      operationId: searchIndustryCategory
+      parameters:
+        - name: name
+          in: query
+          description: name
+          required: false
+          type: string
+        - name: description
+          in: query
+          description: description
+          required: false
+          type: string
+        - name: status
+          in: query
+          description: status
+          required: false
+          type: integer
+        - name: parentID
+          in: query
+          description: parentID
+          required: false
+          type: string
+        - name: createdTimeStart
+          in: query
+          description: createdTimeStart
+          required: false
+          type: string
+        - name: createdTimeEnd
+          in: query
+          description: createdTimeEnd
+          required: false
+          type: string
+        - name: updatedTimeStart
+          in: query
+          description: updatedTimeStart
+          required: false
+          type: string
+        - name: updatedTimeEnd
+          in: query
+          description: updatedTimeEnd
+          required: false
+          type: string
+        - name: createdByUser
+          in: query
+          description: createdByUser
+          required: false
+          type: string
+        - name: updatedByUser
+          in: query
+          description: updatedByUser
+          required: false
+          type: string
+        - name: pageNo
+          in: query
+          description: pageNo
+          required: false
+          type: integer
+        - name: pageSize
+          in: query
+          description: pageSize
+          required: false
+          type: integer
+      responses:
+        '200':
+          description: List of IndustryCategory
+          schema:
+            $ref: '#/definitions/IndustryCategoryList'
+  /industryCategory/search/keyword:
+    get:
+      description: Search IndustryCategory by keyword
+      operationId: searchIndustryCategoryByKeyword
+      parameters:
+        - name: pageNo
+          in: query
+          description: pageNo
+          required: false
+          type: integer
+        - name: pageSize
+          in: query
+          description: pageSize
+          required: false
+          type: integer
+      responses:
+        '200':
+          description: List of IndustryCategory
+          schema:
+            $ref: '#/definitions/IndustryCategoryList'            
+  /dailyImpressions:
+    get:
+      description: |
+        List of DailyImpressions
+      parameters:
+        - name: pageNo
+          in: query
+          description: pageNo
+          required: false
+          type: integer
+        - name: pageSize
+          in: query
+          description: pageSize
+          required: false
+          type: integer
+      tags:
+        - Analytics
+      responses:
+        200:
+          description: List of DailyImpressions
+          schema:
+            $ref: '#/definitions/DailyImpressionsList'          
+    post:
+      description: Creates a new DailyImpressions.
+      operationId: createDailyImpressions
+      parameters:
+        - name: dailyImpressions
+          in: body
+          description: DailyImpressions to be created
+          required: true
+          schema:
+            $ref: '#/definitions/DailyImpressions'
+      responses:
+        '200':
+          description: created DailyImpressions
+          schema:
+            $ref: '#/definitions/DailyImpressions'
+    put:
+      description: Updates the DailyImpressions.
+      operationId: updateDailyImpressions
+      parameters:
+        - name: dailyImpressions
+          in: body
+          description: DailyImpressions to be updated
+          required: true
+          schema:
+            $ref: '#/definitions/DailyImpressions'
+      responses:
+        '200':
+          description: updated DailyImpressions
+          schema:
+            $ref: '#/definitions/DailyImpressions'
+  /dailyImpressions/{id}:
+    get:
+      description: Returns DailyImpressions for the given id
+      operationId: getDailyImpressions
+      parameters:
+        - name: id
+          in: path
+          description: ID of DailyImpressions
+          required: true
+          type: integer
+      responses:
+        '200':
+          description: DailyImpressions response
+          schema:
+            $ref: '#/definitions/DailyImpressions'
+    delete:
+      description: deletes a single DailyImpressions based on the ID supplied
+      operationId: deleteDailyImpressions
+      parameters:
+        - name: id
+          in: path
+          description: ID of DailyImpressions to delete
+          required: true
+          type: integer
+      responses:
+        '200':
+          description: DailyImpressions deleted
+  /dailyImpressions/search:
+    get:
+      description: Search DailyImpressions
+      operationId: searchDailyImpressions
+      parameters:
+        - name: publisherId
+          in: query
+          description: publisherId
+          required: false
+          type: integer
+        - name: digitalPropertyid
+          in: query
+          description: digitalPropertyid
+          required: false
+          type: integer
+        - name: lineItemId
+          in: query
+          description: lineItemId
+          required: false
+          type: integer
+        - name: zoneId
+          in: query
+          description: zoneId
+          required: false
+          type: integer
+        - name: noOfImpressions
+          in: query
+          description: noOfImpressions
+          required: false
+          type: integer
+        - name: noOfClicks
+          in: query
+          description: noOfClicks
+          required: false
+          type: integer
+        - name: date
+          in: query
+          description: date
+          required: false
+          type: integer
+        - name: createdTimeStart
+          in: query
+          description: createdTimeStart
+          required: false
+          type: string
+        - name: createdTimeEnd
+          in: query
+          description: createdTimeEnd
+          required: false
+          type: string
+        - name: updatedTimeStart
+          in: query
+          description: updatedTimeStart
+          required: false
+          type: string
+        - name: updatedTimeEnd
+          in: query
+          description: updatedTimeEnd
+          required: false
+          type: string
+        - name: createdByUser
+          in: query
+          description: createdByUser
+          required: false
+          type: string
+        - name: updatedByUser
+          in: query
+          description: updatedByUser
+          required: false
+          type: string
+        - name: pageNo
+          in: query
+          description: pageNo
+          required: false
+          type: integer
+        - name: pageSize
+          in: query
+          description: pageSize
+          required: false
+          type: integer
+      responses:
+        '200':
+          description: List of DailyImpressions
+          schema:
+            $ref: '#/definitions/DailyImpressionsList'
+  /dailyImpressions/search/keyword:
+    get:
+      description: Search DailyImpressions by keyword
+      operationId: searchDailyImpressionsByKeyword
+      parameters:
+        - name: pageNo
+          in: query
+          description: pageNo
+          required: false
+          type: integer
+        - name: pageSize
+          in: query
+          description: pageSize
+          required: false
+          type: integer
+      responses:
+        '200':
+          description: List of DailyImpressions
+          schema:
+            $ref: '#/definitions/DailyImpressionsList'            
+  /hourlyImpressions:
+    get:
+      description: |
+        List of HourlyImpressions
+      parameters:
+        - name: pageNo
+          in: query
+          description: pageNo
+          required: false
+          type: integer
+        - name: pageSize
+          in: query
+          description: pageSize
+          required: false
+          type: integer
+      tags:
+        - Analytics
+      responses:
+        200:
+          description: List of HourlyImpressions
+          schema:
+            $ref: '#/definitions/HourlyImpressionsList'          
+    post:
+      description: Creates a new HourlyImpressions.
+      operationId: createHourlyImpressions
+      parameters:
+        - name: hourlyImpressions
+          in: body
+          description: HourlyImpressions to be created
+          required: true
+          schema:
+            $ref: '#/definitions/HourlyImpressions'
+      responses:
+        '200':
+          description: created HourlyImpressions
+          schema:
+            $ref: '#/definitions/HourlyImpressions'
+    put:
+      description: Updates the HourlyImpressions.
+      operationId: updateHourlyImpressions
+      parameters:
+        - name: hourlyImpressions
+          in: body
+          description: HourlyImpressions to be updated
+          required: true
+          schema:
+            $ref: '#/definitions/HourlyImpressions'
+      responses:
+        '200':
+          description: updated HourlyImpressions
+          schema:
+            $ref: '#/definitions/HourlyImpressions'
+  /hourlyImpressions/{id}:
+    get:
+      description: Returns HourlyImpressions for the given id
+      operationId: getHourlyImpressions
+      parameters:
+        - name: id
+          in: path
+          description: ID of HourlyImpressions
+          required: true
+          type: integer
+      responses:
+        '200':
+          description: HourlyImpressions response
+          schema:
+            $ref: '#/definitions/HourlyImpressions'
+    delete:
+      description: deletes a single HourlyImpressions based on the ID supplied
+      operationId: deleteHourlyImpressions
+      parameters:
+        - name: id
+          in: path
+          description: ID of HourlyImpressions to delete
+          required: true
+          type: integer
+      responses:
+        '200':
+          description: HourlyImpressions deleted
+  /hourlyImpressions/search:
+    get:
+      description: Search HourlyImpressions
+      operationId: searchHourlyImpressions
+      parameters:
+        - name: publisherId
+          in: query
+          description: publisherId
+          required: false
+          type: string
+        - name: digitalPropertyid
+          in: query
+          description: digitalPropertyid
+          required: false
+          type: integer
+        - name: lineItemId
+          in: query
+          description: lineItemId
+          required: false
+          type: integer
+        - name: zoneId
+          in: query
+          description: zoneId
+          required: false
+          type: string
+        - name: noOfImpressions
+          in: query
+          description: noOfImpressions
+          required: false
+          type: integer
+        - name: noOfClicks
+          in: query
+          description: noOfClicks
+          required: false
+          type: integer
+        - name: dateTime
+          in: query
+          description: dateTime
+          required: false
+          type: integer
+        - name: createdTimeStart
+          in: query
+          description: createdTimeStart
+          required: false
+          type: string
+        - name: createdTimeEnd
+          in: query
+          description: createdTimeEnd
+          required: false
+          type: string
+        - name: updatedTimeStart
+          in: query
+          description: updatedTimeStart
+          required: false
+          type: string
+        - name: updatedTimeEnd
+          in: query
+          description: updatedTimeEnd
+          required: false
+          type: string
+        - name: createdByUser
+          in: query
+          description: createdByUser
+          required: false
+          type: string
+        - name: updatedByUser
+          in: query
+          description: updatedByUser
+          required: false
+          type: string
+        - name: pageNo
+          in: query
+          description: pageNo
+          required: false
+          type: integer
+        - name: pageSize
+          in: query
+          description: pageSize
+          required: false
+          type: integer
+      responses:
+        '200':
+          description: List of HourlyImpressions
+          schema:
+            $ref: '#/definitions/HourlyImpressionsList'
+  /hourlyImpressions/search/keyword:
+    get:
+      description: Search HourlyImpressions by keyword
+      operationId: searchHourlyImpressionsByKeyword
+      parameters:
+        - name: pageNo
+          in: query
+          description: pageNo
+          required: false
+          type: integer
+        - name: pageSize
+          in: query
+          description: pageSize
+          required: false
+          type: integer
+      responses:
+        '200':
+          description: List of HourlyImpressions
+          schema:
+            $ref: '#/definitions/HourlyImpressionsList'            
+  
+definitions:
+  User:
+    type: object
+    properties:
+      id:
+        type: integer
+        description: Id
+      email:
+        type: string
+      loginName:
+        type: string
+      password:
+        type: string
+      status:
+        type: integer
+      userType:
+        type: integer
+      hintQuestion1:
+        type: string
+      hintAnswer1:
+        type: string
+      hintQuestion2:
+        type: string
+      hintAnswer2:
+        type: string
+      isAdmin:
+        type: boolean
+      createdTime:
+        type: string
+        format: date
+      updatedTime:
+        type: string
+        format: date
+      createdByUser:
+        type: string
+      updatedByUser:
+        type: string
+      advertiser:
+        type: Advertiser
+      publisher:
+        type: Publisher
+      role:
+        type: Role
+  UserList:
+    type: object
+    properties:
+      count:
+        type: integer
+        format: int64
+        description: Total count of objects
+      users:
+        type: array
+        items:
+          $ref: '#/definitions/User'      
+  UserSession:
+    type: object
+    properties:
+      id:
+        type: integer
+        description: Id
+      userId:
+        type: string
+      userSessionId:
+        type: string
+      authToken:
+        type: string
+      lastAccessTime:
+        type: string
+        format: date
+      lastLoggedInTime:
+        type: string
+        format: date
+      createdTime:
+        type: string
+        format: date
+      updatedTime:
+        type: string
+        format: date
+      createdByUser:
+        type: string
+      updatedByUser:
+        type: string
+  UserSessionList:
+    type: object
+    properties:
+      count:
+        type: integer
+        format: int64
+        description: Total count of objects
+      userSessions:
+        type: array
+        items:
+          $ref: '#/definitions/UserSession'      
+  Notification:
+    type: object
+    properties:
+      id:
+        type: integer
+        description: Id
+      notificationId:
+        type: string
+      userId:
+        type: string
+      deviceOS:
+        type: string
+      source:
+        type: string
+      createdTime:
+        type: string
+        format: date
+      updatedTime:
+        type: string
+        format: date
+      createdByUser:
+        type: string
+      updatedByUser:
+        type: string
+  NotificationList:
+    type: object
+    properties:
+      count:
+        type: integer
+        format: int64
+        description: Total count of objects
+      notifications:
+        type: array
+        items:
+          $ref: '#/definitions/Notification'      
+  Role:
+    type: object
+    properties:
+      id:
+        type: integer
+        description: Id
+      roleId:
+        type: string
+      roleName:
+        type: integer
+      roleGroup:
+        type: integer
+      createdTime:
+        type: string
+        format: date
+      updatedTime:
+        type: string
+        format: date
+      createdByUser:
+        type: string
+      updatedByUser:
+        type: string
+  RoleList:
+    type: object
+    properties:
+      count:
+        type: integer
+        format: int64
+        description: Total count of objects
+      roles:
+        type: array
+        items:
+          $ref: '#/definitions/Role'      
+  Advertiser:
+    type: object
+    properties:
+      id:
+        type: integer
+        description: Id
+      advertiserId:
+        type: string
+      advertiserName:
+        type: string
+      company:
+        type: string
+      contactName:
+        type: string
+      contactNumber:
+        type: string
+      country:
+        type: string
+      description:
+        type: string
+      partnerType:
+        type: string
+      status:
+        type: string
+      createdTime:
+        type: string
+        format: date
+      updatedTime:
+        type: string
+        format: date
+      createdByUser:
+        type: string
+      updatedByUser:
+        type: string
+  AdvertiserList:
+    type: object
+    properties:
+      count:
+        type: integer
+        format: int64
+        description: Total count of objects
+      advertisers:
+        type: array
+        items:
+          $ref: '#/definitions/Advertiser'      
+  Publisher:
+    type: object
+    properties:
+      id:
+        type: integer
+        description: Id
+      publisherId:
+        type: string
+      publisherName:
+        type: string
+      company:
+        type: string
+      contactName:
+        type: string
+      contactNumber:
+        type: string
+      country:
+        type: string
+      primaryDomain:
+        type: string
+      iabCategory:
+        type: string
+      address:
+        type: string
+      status:
+        type: integer
+      createdTime:
+        type: string
+        format: date
+      updatedTime:
+        type: string
+        format: date
+      createdByUser:
+        type: string
+      updatedByUser:
+        type: string
+  PublisherList:
+    type: object
+    properties:
+      count:
+        type: integer
+        format: int64
+        description: Total count of objects
+      publishers:
+        type: array
+        items:
+          $ref: '#/definitions/Publisher'      
+  InsertionOrder:
+    type: object
+    properties:
+      id:
+        type: integer
+        description: Id
+      insertionOrderId:
+        type: string
+      campaignName:
+        type: string
+      description:
+        type: string
+      campaignObjective:
+        type: string
+      campaignStartDate:
+        type: string
+        format: date
+      campaignEndDate:
+        type: string
+        format: date
+      orderType:
+        type: string
+      spend:
+        type: number
+        format: float
+      currency:
+        type: number
+        format: float
+      revenueModel:
+        type: string
+      maximumImpressions:
+        type: integer
+      maximumSpend:
+        type: number
+        format: float
+      currentImpressions:
+        type: integer
+      currentSpend:
+        type: number
+        format: float
+      maximumSpendPerDay:
+        type: number
+        format: float
+      pixelTrackingEnabled:
+        type: boolean
+      companionCampaign:
+        type: string
+      campaignStatus:
+        type: string
+      priority:
+        type: string
+      comments:
+        type: string
+      advertiserId:
+        type: string
+      status:
+        type: integer
+      createdTime:
+        type: string
+        format: date
+      updatedTime:
+        type: string
+        format: date
+      createdByUser:
+        type: string
+      updatedByUser:
+        type: string
+  InsertionOrderList:
+    type: object
+    properties:
+      count:
+        type: integer
+        format: int64
+        description: Total count of objects
+      insertionOrders:
+        type: array
+        items:
+          $ref: '#/definitions/InsertionOrder'      
+  LineItem:
+    type: object
+    properties:
+      id:
+        type: integer
+        description: Id
+      campaignId:
+        type: string
+      advertiserId:
+        type: string
+      bannerName:
+        type: string
+      description:
+        type: string
+      adType:
+        type: string
+      weightage:
+        type: integer
+      bannerDimension:
+        type: string
+      assetUrl:
+        type: string
+      assetText:
+        type: string
+      clickUrl:
+        type: string
+      callbackUrl:
+        type: string
+      deliveryChannel:
+        type: string
+      adTag:
+        type: string
+      impressionsCounter:
+        type: integer
+      bidsCounter:
+        type: integer
+      currentSpend:
+        type: number
+        format: float
+      nativeId:
+        type: string
+      videoId:
+        type: string
+      bannerStatus:
+        type: string
+      status:
+        type: integer
+      createdTime:
+        type: string
+        format: date
+      updatedTime:
+        type: string
+        format: date
+      createdByUser:
+        type: string
+      updatedByUser:
+        type: string
+  LineItemList:
+    type: object
+    properties:
+      count:
+        type: integer
+        format: int64
+        description: Total count of objects
+      lineItems:
+        type: array
+        items:
+          $ref: '#/definitions/LineItem'      
+  NativeAd:
+    type: object
+    properties:
+      id:
+        type: integer
+        description: Id
+      title:
+        type: string
+      description:
+        type: string
+      highlightedText:
+        type: string
+      icon:
+        type: string
+      button:
+        type: string
+      actionUrl:
+        type: string
+      price:
+        type: number
+        format: float
+      rating:
+        type: integer
+      sponsoredText:
+        type: string
+      sponsoredImageUrl:
+        type: string
+  NativeAdList:
+    type: object
+    properties:
+      count:
+        type: integer
+        format: int64
+        description: Total count of objects
+      nativeAds:
+        type: array
+        items:
+          $ref: '#/definitions/NativeAd'      
+  Video:
+    type: object
+    properties:
+      id:
+        type: integer
+        description: Id
+      title:
+        type: string
+      videoUrl:
+        type: string
+      videoType:
+        type: string
+      delivery:
+        type: string
+      bitrate:
+        type: string
+      width:
+        type: integer
+      height:
+        type: integer
+      duration:
+        type: number
+        format: float
+  VideoList:
+    type: object
+    properties:
+      count:
+        type: integer
+        format: int64
+        description: Total count of objects
+      videos:
+        type: array
+        items:
+          $ref: '#/definitions/Video'      
+  DigitalProperty:
+    type: object
+    properties:
+      id:
+        type: integer
+        description: Id
+      propertyName:
+        type: string
+      description:
+        type: string
+      type:
+        type: string
+      domainURL:
+        type: string
+      publisherId:
+        type: string
+      IABCategory:
+        type: string
+      IABSubCategory:
+        type: string
+      country:
+        type: string
+      language:
+        type: string
+      status:
+        type: integer
+      createdTime:
+        type: string
+        format: date
+      updatedTime:
+        type: string
+        format: date
+      createdByUser:
+        type: string
+      updatedByUser:
+        type: string
+  DigitalPropertyList:
+    type: object
+    properties:
+      count:
+        type: integer
+        format: int64
+        description: Total count of objects
+      digitalPropertys:
+        type: array
+        items:
+          $ref: '#/definitions/DigitalProperty'      
+  Inventory:
+    type: object
+    properties:
+      id:
+        type: integer
+        description: Id
+      zoneID:
+        type: string
+      digitalPropertyId:
+        type: string
+      inventoryName:
+        type: string
+      description:
+        type: string
+      zoneType:
+        type: string
+      adType:
+        type: string
+      adTemplateID:
+        type: string
+      adWidth:
+        type: integer
+      adHeight:
+        type: integer
+      adInvocationTag:
+        type: string
+      passbackAdTag:
+        type: string
+      floorPrice:
+        type: integer
+      totalRequests:
+        type: integer
+      totalImpressions:
+        type: integer
+      totalRevenues:
+        type: number
+        format: float
+      keywords:
+        type: string
+      status:
+        type: integer
+      createdTime:
+        type: string
+        format: date
+      updatedTime:
+        type: string
+        format: date
+      createdByUser:
+        type: string
+      updatedByUser:
+        type: string
+  InventoryList:
+    type: object
+    properties:
+      count:
+        type: integer
+        format: int64
+        description: Total count of objects
+      inventorys:
+        type: array
+        items:
+          $ref: '#/definitions/Inventory'      
+  InventorySpace:
+    type: object
+    properties:
+      id:
+        type: integer
+        description: Id
+      inventoryId:
+        type: string
+      estimatedValue:
+        type: number
+        format: float
+      units:
+        type: string
+  InventorySpaceList:
+    type: object
+    properties:
+      count:
+        type: integer
+        format: int64
+        description: Total count of objects
+      inventorySpaces:
+        type: array
+        items:
+          $ref: '#/definitions/InventorySpace'      
+  AdTemplates:
+    type: object
+    properties:
+      id:
+        type: integer
+        description: Id
+      adTemplateID:
+        type: string
+      templateName:
+        type: string
+      isMobileFlag:
+        type: integer
+      width:
+        type: integer
+      height:
+        type: integer
+      status:
+        type: integer
+      createdTime:
+        type: string
+        format: date
+      updatedTime:
+        type: string
+        format: date
+      createdByUser:
+        type: string
+      updatedByUser:
+        type: string
+  AdTemplatesList:
+    type: object
+    properties:
+      count:
+        type: integer
+        format: int64
+        description: Total count of objects
+      adTemplatess:
+        type: array
+        items:
+          $ref: '#/definitions/AdTemplates'      
+  BannerAdzones:
+    type: object
+    properties:
+      id:
+        type: integer
+        description: Id
+      bannerID:
+        type: string
+      zoneID:
+        type: string
+      campaignID:
+        type: string
+  BannerAdzonesList:
+    type: object
+    properties:
+      count:
+        type: integer
+        format: int64
+        description: Total count of objects
+      bannerAdzoness:
+        type: array
+        items:
+          $ref: '#/definitions/BannerAdzones'      
+  BannerAdTarget:
+    type: object
+    properties:
+      id:
+        type: integer
+        description: Id
+      bannerID:
+        type: string
+      campaignID:
+        type: string
+      geo:
+        type: string
+      state:
+        type: string
+      city:
+        type: string
+      ageGroup:
+        type: string
+      gender:
+        type: string
+      category:
+        type: string
+      keyword:
+        type: string
+      status:
+        type: integer
+  BannerAdTargetList:
+    type: object
+    properties:
+      count:
+        type: integer
+        format: int64
+        description: Total count of objects
+      bannerAdTargets:
+        type: array
+        items:
+          $ref: '#/definitions/BannerAdTarget'      
+  IndustryCategory:
+    type: object
+    properties:
+      id:
+        type: integer
+        description: Id
+      name:
+        type: string
+      description:
+        type: string
+      status:
+        type: integer
+      parentID:
+        type: string
+      createdTime:
+        type: string
+        format: date
+      updatedTime:
+        type: string
+        format: date
+      createdByUser:
+        type: string
+      updatedByUser:
+        type: string
+  IndustryCategoryList:
+    type: object
+    properties:
+      count:
+        type: integer
+        format: int64
+        description: Total count of objects
+      industryCategorys:
+        type: array
+        items:
+          $ref: '#/definitions/IndustryCategory'      
+  DailyImpressions:
+    type: object
+    properties:
+      id:
+        type: integer
+        description: Id
+      publisherId:
+        type: integer
+      digitalPropertyid:
+        type: integer
+      lineItemId:
+        type: integer
+      zoneId:
+        type: integer
+      noOfImpressions:
+        type: integer
+      noOfClicks:
+        type: integer
+      date:
+        type: integer
+      createdTime:
+        type: string
+        format: date
+      updatedTime:
+        type: string
+        format: date
+      createdByUser:
+        type: string
+      updatedByUser:
+        type: string
+  DailyImpressionsList:
+    type: object
+    properties:
+      count:
+        type: integer
+        format: int64
+        description: Total count of objects
+      dailyImpressionss:
+        type: array
+        items:
+          $ref: '#/definitions/DailyImpressions'      
+  HourlyImpressions:
+    type: object
+    properties:
+      id:
+        type: integer
+        description: Id
+      publisherId:
+        type: string
+      digitalPropertyid:
+        type: integer
+      lineItemId:
+        type: integer
+      zoneId:
+        type: string
+      noOfImpressions:
+        type: integer
+      noOfClicks:
+        type: integer
+      dateTime:
+        type: integer
+      createdTime:
+        type: string
+        format: date
+      updatedTime:
+        type: string
+        format: date
+      createdByUser:
+        type: string
+      updatedByUser:
+        type: string
+  HourlyImpressionsList:
+    type: object
+    properties:
+      count:
+        type: integer
+        format: int64
+        description: Total count of objects
+      hourlyImpressionss:
+        type: array
+        items:
+          $ref: '#/definitions/HourlyImpressions'      
+  
+  

@@ -1,0 +1,18 @@
+= TechM Arena Ad Exchange API
+
+== Overview
+API specification for TechM Arena Ad Exchange
+
+=== Version information
+Version: 1.0.0
+
+=== URI scheme
+Host: api.test.com
+BasePath: /v1
+Schemes: HTTP, HTTPS
+
+=== Produces
+
+* application/json
+
+

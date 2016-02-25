@@ -1,0 +1,2939 @@
+== Paths
+=== GET /adTemplates
+==== Description
+:hardbreaks:
+List of AdTemplates
+
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|QueryParameter|pageNo|pageNo|false|integer|
+|QueryParameter|pageSize|pageSize|false|integer|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|List of AdTemplates|<<AdTemplatesList>>
+|===
+
+==== Tags
+
+* Common
+
+=== POST /adTemplates
+==== Description
+:hardbreaks:
+Creates a new AdTemplates.
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|BodyParameter|adTemplates|AdTemplates to be created|true|<<AdTemplates>>|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|created AdTemplates|<<AdTemplates>>
+|===
+
+=== PUT /adTemplates
+==== Description
+:hardbreaks:
+Updates the AdTemplates.
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|BodyParameter|adTemplates|AdTemplates to be updated|true|<<AdTemplates>>|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|updated AdTemplates|<<AdTemplates>>
+|===
+
+=== GET /adTemplates/search
+==== Description
+:hardbreaks:
+Search AdTemplates
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|QueryParameter|adTemplateID|adTemplateID|false|string|
+|QueryParameter|templateName|templateName|false|string|
+|QueryParameter|isMobileFlag|isMobileFlag|false|integer|
+|QueryParameter|width|width|false|integer|
+|QueryParameter|height|height|false|integer|
+|QueryParameter|status|status|false|integer|
+|QueryParameter|createdTimeStart|createdTimeStart|false|string|
+|QueryParameter|createdTimeEnd|createdTimeEnd|false|string|
+|QueryParameter|updatedTimeStart|updatedTimeStart|false|string|
+|QueryParameter|updatedTimeEnd|updatedTimeEnd|false|string|
+|QueryParameter|createdByUser|createdByUser|false|string|
+|QueryParameter|updatedByUser|updatedByUser|false|string|
+|QueryParameter|pageNo|pageNo|false|integer|
+|QueryParameter|pageSize|pageSize|false|integer|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|List of AdTemplates|<<AdTemplatesList>>
+|===
+
+=== GET /adTemplates/search/keyword
+==== Description
+:hardbreaks:
+Search AdTemplates by keyword
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|QueryParameter|pageNo|pageNo|false|integer|
+|QueryParameter|pageSize|pageSize|false|integer|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|List of AdTemplates|<<AdTemplatesList>>
+|===
+
+=== DELETE /adTemplates/{id}
+==== Description
+:hardbreaks:
+deletes a single AdTemplates based on the ID supplied
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|PathParameter|id|ID of AdTemplates to delete|true|integer|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|AdTemplates deleted|No Content
+|===
+
+=== GET /adTemplates/{id}
+==== Description
+:hardbreaks:
+Returns AdTemplates for the given id
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|PathParameter|id|ID of AdTemplates|true|integer|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|AdTemplates response|<<AdTemplates>>
+|===
+
+=== GET /advertiser
+==== Description
+:hardbreaks:
+List of Advertiser
+
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|QueryParameter|pageNo|pageNo|false|integer|
+|QueryParameter|pageSize|pageSize|false|integer|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|List of Advertiser|<<AdvertiserList>>
+|===
+
+==== Tags
+
+* User
+
+=== POST /advertiser
+==== Description
+:hardbreaks:
+Creates a new Advertiser.
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|BodyParameter|advertiser|Advertiser to be created|true|<<Advertiser>>|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|created Advertiser|<<Advertiser>>
+|===
+
+=== PUT /advertiser
+==== Description
+:hardbreaks:
+Updates the Advertiser.
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|BodyParameter|advertiser|Advertiser to be updated|true|<<Advertiser>>|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|updated Advertiser|<<Advertiser>>
+|===
+
+=== GET /advertiser/search
+==== Description
+:hardbreaks:
+Search Advertiser
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|QueryParameter|advertiserId|advertiserId|false|string|
+|QueryParameter|advertiserName|advertiserName|false|string|
+|QueryParameter|company|company|false|string|
+|QueryParameter|contactName|contactName|false|string|
+|QueryParameter|contactNumber|contactNumber|false|string|
+|QueryParameter|country|country|false|string|
+|QueryParameter|description|description|false|string|
+|QueryParameter|partnerType|partnerType|false|string|
+|QueryParameter|status|status|false|string|
+|QueryParameter|createdTimeStart|createdTimeStart|false|string|
+|QueryParameter|createdTimeEnd|createdTimeEnd|false|string|
+|QueryParameter|updatedTimeStart|updatedTimeStart|false|string|
+|QueryParameter|updatedTimeEnd|updatedTimeEnd|false|string|
+|QueryParameter|createdByUser|createdByUser|false|string|
+|QueryParameter|updatedByUser|updatedByUser|false|string|
+|QueryParameter|pageNo|pageNo|false|integer|
+|QueryParameter|pageSize|pageSize|false|integer|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|List of Advertiser|<<AdvertiserList>>
+|===
+
+=== GET /advertiser/search/keyword
+==== Description
+:hardbreaks:
+Search Advertiser by keyword
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|QueryParameter|pageNo|pageNo|false|integer|
+|QueryParameter|pageSize|pageSize|false|integer|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|List of Advertiser|<<AdvertiserList>>
+|===
+
+=== DELETE /advertiser/{id}
+==== Description
+:hardbreaks:
+deletes a single Advertiser based on the ID supplied
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|PathParameter|id|ID of Advertiser to delete|true|integer|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|Advertiser deleted|No Content
+|===
+
+=== GET /advertiser/{id}
+==== Description
+:hardbreaks:
+Returns Advertiser for the given id
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|PathParameter|id|ID of Advertiser|true|integer|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|Advertiser response|<<Advertiser>>
+|===
+
+=== GET /bannerAdTarget
+==== Description
+:hardbreaks:
+List of BannerAdTarget
+
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|QueryParameter|pageNo|pageNo|false|integer|
+|QueryParameter|pageSize|pageSize|false|integer|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|List of BannerAdTarget|<<BannerAdTargetList>>
+|===
+
+==== Tags
+
+* Campaign
+
+=== POST /bannerAdTarget
+==== Description
+:hardbreaks:
+Creates a new BannerAdTarget.
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|BodyParameter|bannerAdTarget|BannerAdTarget to be created|true|<<BannerAdTarget>>|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|created BannerAdTarget|<<BannerAdTarget>>
+|===
+
+=== PUT /bannerAdTarget
+==== Description
+:hardbreaks:
+Updates the BannerAdTarget.
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|BodyParameter|bannerAdTarget|BannerAdTarget to be updated|true|<<BannerAdTarget>>|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|updated BannerAdTarget|<<BannerAdTarget>>
+|===
+
+=== GET /bannerAdTarget/search
+==== Description
+:hardbreaks:
+Search BannerAdTarget
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|QueryParameter|bannerID|bannerID|false|string|
+|QueryParameter|campaignID|campaignID|false|string|
+|QueryParameter|geo|geo|false|string|
+|QueryParameter|state|state|false|string|
+|QueryParameter|city|city|false|string|
+|QueryParameter|ageGroup|ageGroup|false|string|
+|QueryParameter|gender|gender|false|string|
+|QueryParameter|category|category|false|string|
+|QueryParameter|keyword|keyword|false|string|
+|QueryParameter|status|status|false|integer|
+|QueryParameter|pageNo|pageNo|false|integer|
+|QueryParameter|pageSize|pageSize|false|integer|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|List of BannerAdTarget|<<BannerAdTargetList>>
+|===
+
+=== GET /bannerAdTarget/search/keyword
+==== Description
+:hardbreaks:
+Search BannerAdTarget by keyword
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|QueryParameter|pageNo|pageNo|false|integer|
+|QueryParameter|pageSize|pageSize|false|integer|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|List of BannerAdTarget|<<BannerAdTargetList>>
+|===
+
+=== DELETE /bannerAdTarget/{id}
+==== Description
+:hardbreaks:
+deletes a single BannerAdTarget based on the ID supplied
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|PathParameter|id|ID of BannerAdTarget to delete|true|integer|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|BannerAdTarget deleted|No Content
+|===
+
+=== GET /bannerAdTarget/{id}
+==== Description
+:hardbreaks:
+Returns BannerAdTarget for the given id
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|PathParameter|id|ID of BannerAdTarget|true|integer|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|BannerAdTarget response|<<BannerAdTarget>>
+|===
+
+=== GET /bannerAdzones
+==== Description
+:hardbreaks:
+List of BannerAdzones
+
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|QueryParameter|pageNo|pageNo|false|integer|
+|QueryParameter|pageSize|pageSize|false|integer|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|List of BannerAdzones|<<BannerAdzonesList>>
+|===
+
+==== Tags
+
+* Campaign
+
+=== POST /bannerAdzones
+==== Description
+:hardbreaks:
+Creates a new BannerAdzones.
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|BodyParameter|bannerAdzones|BannerAdzones to be created|true|<<BannerAdzones>>|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|created BannerAdzones|<<BannerAdzones>>
+|===
+
+=== PUT /bannerAdzones
+==== Description
+:hardbreaks:
+Updates the BannerAdzones.
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|BodyParameter|bannerAdzones|BannerAdzones to be updated|true|<<BannerAdzones>>|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|updated BannerAdzones|<<BannerAdzones>>
+|===
+
+=== GET /bannerAdzones/search
+==== Description
+:hardbreaks:
+Search BannerAdzones
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|QueryParameter|bannerID|bannerID|false|string|
+|QueryParameter|zoneID|zoneID|false|string|
+|QueryParameter|campaignID|campaignID|false|string|
+|QueryParameter|pageNo|pageNo|false|integer|
+|QueryParameter|pageSize|pageSize|false|integer|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|List of BannerAdzones|<<BannerAdzonesList>>
+|===
+
+=== GET /bannerAdzones/search/keyword
+==== Description
+:hardbreaks:
+Search BannerAdzones by keyword
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|QueryParameter|pageNo|pageNo|false|integer|
+|QueryParameter|pageSize|pageSize|false|integer|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|List of BannerAdzones|<<BannerAdzonesList>>
+|===
+
+=== DELETE /bannerAdzones/{id}
+==== Description
+:hardbreaks:
+deletes a single BannerAdzones based on the ID supplied
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|PathParameter|id|ID of BannerAdzones to delete|true|integer|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|BannerAdzones deleted|No Content
+|===
+
+=== GET /bannerAdzones/{id}
+==== Description
+:hardbreaks:
+Returns BannerAdzones for the given id
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|PathParameter|id|ID of BannerAdzones|true|integer|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|BannerAdzones response|<<BannerAdzones>>
+|===
+
+=== GET /dailyImpressions
+==== Description
+:hardbreaks:
+List of DailyImpressions
+
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|QueryParameter|pageNo|pageNo|false|integer|
+|QueryParameter|pageSize|pageSize|false|integer|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|List of DailyImpressions|<<DailyImpressionsList>>
+|===
+
+==== Tags
+
+* Analytics
+
+=== POST /dailyImpressions
+==== Description
+:hardbreaks:
+Creates a new DailyImpressions.
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|BodyParameter|dailyImpressions|DailyImpressions to be created|true|<<DailyImpressions>>|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|created DailyImpressions|<<DailyImpressions>>
+|===
+
+=== PUT /dailyImpressions
+==== Description
+:hardbreaks:
+Updates the DailyImpressions.
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|BodyParameter|dailyImpressions|DailyImpressions to be updated|true|<<DailyImpressions>>|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|updated DailyImpressions|<<DailyImpressions>>
+|===
+
+=== GET /dailyImpressions/search
+==== Description
+:hardbreaks:
+Search DailyImpressions
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|QueryParameter|publisherId|publisherId|false|integer|
+|QueryParameter|digitalPropertyid|digitalPropertyid|false|integer|
+|QueryParameter|lineItemId|lineItemId|false|integer|
+|QueryParameter|zoneId|zoneId|false|integer|
+|QueryParameter|noOfImpressions|noOfImpressions|false|integer|
+|QueryParameter|noOfClicks|noOfClicks|false|integer|
+|QueryParameter|date|date|false|integer|
+|QueryParameter|createdTimeStart|createdTimeStart|false|string|
+|QueryParameter|createdTimeEnd|createdTimeEnd|false|string|
+|QueryParameter|updatedTimeStart|updatedTimeStart|false|string|
+|QueryParameter|updatedTimeEnd|updatedTimeEnd|false|string|
+|QueryParameter|createdByUser|createdByUser|false|string|
+|QueryParameter|updatedByUser|updatedByUser|false|string|
+|QueryParameter|pageNo|pageNo|false|integer|
+|QueryParameter|pageSize|pageSize|false|integer|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|List of DailyImpressions|<<DailyImpressionsList>>
+|===
+
+=== GET /dailyImpressions/search/keyword
+==== Description
+:hardbreaks:
+Search DailyImpressions by keyword
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|QueryParameter|pageNo|pageNo|false|integer|
+|QueryParameter|pageSize|pageSize|false|integer|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|List of DailyImpressions|<<DailyImpressionsList>>
+|===
+
+=== DELETE /dailyImpressions/{id}
+==== Description
+:hardbreaks:
+deletes a single DailyImpressions based on the ID supplied
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|PathParameter|id|ID of DailyImpressions to delete|true|integer|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|DailyImpressions deleted|No Content
+|===
+
+=== GET /dailyImpressions/{id}
+==== Description
+:hardbreaks:
+Returns DailyImpressions for the given id
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|PathParameter|id|ID of DailyImpressions|true|integer|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|DailyImpressions response|<<DailyImpressions>>
+|===
+
+=== GET /digitalProperty
+==== Description
+:hardbreaks:
+List of DigitalProperty
+
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|QueryParameter|pageNo|pageNo|false|integer|
+|QueryParameter|pageSize|pageSize|false|integer|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|List of DigitalProperty|<<DigitalPropertyList>>
+|===
+
+==== Tags
+
+* Publisher
+
+=== POST /digitalProperty
+==== Description
+:hardbreaks:
+Creates a new DigitalProperty.
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|BodyParameter|digitalProperty|DigitalProperty to be created|true|<<DigitalProperty>>|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|created DigitalProperty|<<DigitalProperty>>
+|===
+
+=== PUT /digitalProperty
+==== Description
+:hardbreaks:
+Updates the DigitalProperty.
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|BodyParameter|digitalProperty|DigitalProperty to be updated|true|<<DigitalProperty>>|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|updated DigitalProperty|<<DigitalProperty>>
+|===
+
+=== GET /digitalProperty/search
+==== Description
+:hardbreaks:
+Search DigitalProperty
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|QueryParameter|propertyName|propertyName|false|string|
+|QueryParameter|description|description|false|string|
+|QueryParameter|type|type|false|string|
+|QueryParameter|domainURL|domainURL|false|string|
+|QueryParameter|publisherId|publisherId|false|string|
+|QueryParameter|IABCategory|IABCategory|false|string|
+|QueryParameter|IABSubCategory|IABSubCategory|false|string|
+|QueryParameter|country|country|false|string|
+|QueryParameter|language|language|false|string|
+|QueryParameter|status|status|false|integer|
+|QueryParameter|createdTimeStart|createdTimeStart|false|string|
+|QueryParameter|createdTimeEnd|createdTimeEnd|false|string|
+|QueryParameter|updatedTimeStart|updatedTimeStart|false|string|
+|QueryParameter|updatedTimeEnd|updatedTimeEnd|false|string|
+|QueryParameter|createdByUser|createdByUser|false|string|
+|QueryParameter|updatedByUser|updatedByUser|false|string|
+|QueryParameter|pageNo|pageNo|false|integer|
+|QueryParameter|pageSize|pageSize|false|integer|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|List of DigitalProperty|<<DigitalPropertyList>>
+|===
+
+=== GET /digitalProperty/search/keyword
+==== Description
+:hardbreaks:
+Search DigitalProperty by keyword
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|QueryParameter|pageNo|pageNo|false|integer|
+|QueryParameter|pageSize|pageSize|false|integer|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|List of DigitalProperty|<<DigitalPropertyList>>
+|===
+
+=== DELETE /digitalProperty/{id}
+==== Description
+:hardbreaks:
+deletes a single DigitalProperty based on the ID supplied
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|PathParameter|id|ID of DigitalProperty to delete|true|integer|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|DigitalProperty deleted|No Content
+|===
+
+=== GET /digitalProperty/{id}
+==== Description
+:hardbreaks:
+Returns DigitalProperty for the given id
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|PathParameter|id|ID of DigitalProperty|true|integer|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|DigitalProperty response|<<DigitalProperty>>
+|===
+
+=== GET /hourlyImpressions
+==== Description
+:hardbreaks:
+List of HourlyImpressions
+
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|QueryParameter|pageNo|pageNo|false|integer|
+|QueryParameter|pageSize|pageSize|false|integer|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|List of HourlyImpressions|<<HourlyImpressionsList>>
+|===
+
+==== Tags
+
+* Analytics
+
+=== POST /hourlyImpressions
+==== Description
+:hardbreaks:
+Creates a new HourlyImpressions.
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|BodyParameter|hourlyImpressions|HourlyImpressions to be created|true|<<HourlyImpressions>>|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|created HourlyImpressions|<<HourlyImpressions>>
+|===
+
+=== PUT /hourlyImpressions
+==== Description
+:hardbreaks:
+Updates the HourlyImpressions.
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|BodyParameter|hourlyImpressions|HourlyImpressions to be updated|true|<<HourlyImpressions>>|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|updated HourlyImpressions|<<HourlyImpressions>>
+|===
+
+=== GET /hourlyImpressions/search
+==== Description
+:hardbreaks:
+Search HourlyImpressions
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|QueryParameter|publisherId|publisherId|false|string|
+|QueryParameter|digitalPropertyid|digitalPropertyid|false|integer|
+|QueryParameter|lineItemId|lineItemId|false|integer|
+|QueryParameter|zoneId|zoneId|false|string|
+|QueryParameter|noOfImpressions|noOfImpressions|false|integer|
+|QueryParameter|noOfClicks|noOfClicks|false|integer|
+|QueryParameter|dateTime|dateTime|false|integer|
+|QueryParameter|createdTimeStart|createdTimeStart|false|string|
+|QueryParameter|createdTimeEnd|createdTimeEnd|false|string|
+|QueryParameter|updatedTimeStart|updatedTimeStart|false|string|
+|QueryParameter|updatedTimeEnd|updatedTimeEnd|false|string|
+|QueryParameter|createdByUser|createdByUser|false|string|
+|QueryParameter|updatedByUser|updatedByUser|false|string|
+|QueryParameter|pageNo|pageNo|false|integer|
+|QueryParameter|pageSize|pageSize|false|integer|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|List of HourlyImpressions|<<HourlyImpressionsList>>
+|===
+
+=== GET /hourlyImpressions/search/keyword
+==== Description
+:hardbreaks:
+Search HourlyImpressions by keyword
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|QueryParameter|pageNo|pageNo|false|integer|
+|QueryParameter|pageSize|pageSize|false|integer|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|List of HourlyImpressions|<<HourlyImpressionsList>>
+|===
+
+=== DELETE /hourlyImpressions/{id}
+==== Description
+:hardbreaks:
+deletes a single HourlyImpressions based on the ID supplied
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|PathParameter|id|ID of HourlyImpressions to delete|true|integer|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|HourlyImpressions deleted|No Content
+|===
+
+=== GET /hourlyImpressions/{id}
+==== Description
+:hardbreaks:
+Returns HourlyImpressions for the given id
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|PathParameter|id|ID of HourlyImpressions|true|integer|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|HourlyImpressions response|<<HourlyImpressions>>
+|===
+
+=== GET /industryCategory
+==== Description
+:hardbreaks:
+List of IndustryCategory
+
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|QueryParameter|pageNo|pageNo|false|integer|
+|QueryParameter|pageSize|pageSize|false|integer|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|List of IndustryCategory|<<IndustryCategoryList>>
+|===
+
+==== Tags
+
+* Common
+
+=== POST /industryCategory
+==== Description
+:hardbreaks:
+Creates a new IndustryCategory.
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|BodyParameter|industryCategory|IndustryCategory to be created|true|<<IndustryCategory>>|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|created IndustryCategory|<<IndustryCategory>>
+|===
+
+=== PUT /industryCategory
+==== Description
+:hardbreaks:
+Updates the IndustryCategory.
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|BodyParameter|industryCategory|IndustryCategory to be updated|true|<<IndustryCategory>>|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|updated IndustryCategory|<<IndustryCategory>>
+|===
+
+=== GET /industryCategory/search
+==== Description
+:hardbreaks:
+Search IndustryCategory
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|QueryParameter|name|name|false|string|
+|QueryParameter|description|description|false|string|
+|QueryParameter|status|status|false|integer|
+|QueryParameter|parentID|parentID|false|string|
+|QueryParameter|createdTimeStart|createdTimeStart|false|string|
+|QueryParameter|createdTimeEnd|createdTimeEnd|false|string|
+|QueryParameter|updatedTimeStart|updatedTimeStart|false|string|
+|QueryParameter|updatedTimeEnd|updatedTimeEnd|false|string|
+|QueryParameter|createdByUser|createdByUser|false|string|
+|QueryParameter|updatedByUser|updatedByUser|false|string|
+|QueryParameter|pageNo|pageNo|false|integer|
+|QueryParameter|pageSize|pageSize|false|integer|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|List of IndustryCategory|<<IndustryCategoryList>>
+|===
+
+=== GET /industryCategory/search/keyword
+==== Description
+:hardbreaks:
+Search IndustryCategory by keyword
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|QueryParameter|pageNo|pageNo|false|integer|
+|QueryParameter|pageSize|pageSize|false|integer|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|List of IndustryCategory|<<IndustryCategoryList>>
+|===
+
+=== DELETE /industryCategory/{id}
+==== Description
+:hardbreaks:
+deletes a single IndustryCategory based on the ID supplied
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|PathParameter|id|ID of IndustryCategory to delete|true|integer|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|IndustryCategory deleted|No Content
+|===
+
+=== GET /industryCategory/{id}
+==== Description
+:hardbreaks:
+Returns IndustryCategory for the given id
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|PathParameter|id|ID of IndustryCategory|true|integer|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|IndustryCategory response|<<IndustryCategory>>
+|===
+
+=== GET /insertionOrder
+==== Description
+:hardbreaks:
+List of InsertionOrder
+
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|QueryParameter|pageNo|pageNo|false|integer|
+|QueryParameter|pageSize|pageSize|false|integer|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|List of InsertionOrder|<<InsertionOrderList>>
+|===
+
+==== Tags
+
+* Campaign
+
+=== POST /insertionOrder
+==== Description
+:hardbreaks:
+Creates a new InsertionOrder.
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|BodyParameter|insertionOrder|InsertionOrder to be created|true|<<InsertionOrder>>|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|created InsertionOrder|<<InsertionOrder>>
+|===
+
+=== PUT /insertionOrder
+==== Description
+:hardbreaks:
+Updates the InsertionOrder.
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|BodyParameter|insertionOrder|InsertionOrder to be updated|true|<<InsertionOrder>>|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|updated InsertionOrder|<<InsertionOrder>>
+|===
+
+=== GET /insertionOrder/search
+==== Description
+:hardbreaks:
+Search InsertionOrder
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|QueryParameter|insertionOrderId|insertionOrderId|false|string|
+|QueryParameter|campaignName|campaignName|false|string|
+|QueryParameter|description|description|false|string|
+|QueryParameter|campaignObjective|campaignObjective|false|string|
+|QueryParameter|campaignStartDateStart|campaignStartDateStart|false|string|
+|QueryParameter|campaignStartDateEnd|campaignStartDateEnd|false|string|
+|QueryParameter|campaignEndDateStart|campaignEndDateStart|false|string|
+|QueryParameter|campaignEndDateEnd|campaignEndDateEnd|false|string|
+|QueryParameter|orderType|orderType|false|string|
+|QueryParameter|spend|spend|false|number (float)|
+|QueryParameter|currency|currency|false|number (float)|
+|QueryParameter|revenueModel|revenueModel|false|string|
+|QueryParameter|maximumImpressions|maximumImpressions|false|integer|
+|QueryParameter|maximumSpend|maximumSpend|false|number (float)|
+|QueryParameter|currentImpressions|currentImpressions|false|integer|
+|QueryParameter|currentSpend|currentSpend|false|number (float)|
+|QueryParameter|maximumSpendPerDay|maximumSpendPerDay|false|number (float)|
+|QueryParameter|pixelTrackingEnabled|pixelTrackingEnabled|false|boolean|
+|QueryParameter|companionCampaign|companionCampaign|false|string|
+|QueryParameter|campaignStatus|campaignStatus|false|string|
+|QueryParameter|priority|priority|false|string|
+|QueryParameter|comments|comments|false|string|
+|QueryParameter|advertiserId|advertiserId|false|string|
+|QueryParameter|status|status|false|integer|
+|QueryParameter|createdTimeStart|createdTimeStart|false|string|
+|QueryParameter|createdTimeEnd|createdTimeEnd|false|string|
+|QueryParameter|updatedTimeStart|updatedTimeStart|false|string|
+|QueryParameter|updatedTimeEnd|updatedTimeEnd|false|string|
+|QueryParameter|createdByUser|createdByUser|false|string|
+|QueryParameter|updatedByUser|updatedByUser|false|string|
+|QueryParameter|pageNo|pageNo|false|integer|
+|QueryParameter|pageSize|pageSize|false|integer|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|List of InsertionOrder|<<InsertionOrderList>>
+|===
+
+=== GET /insertionOrder/search/keyword
+==== Description
+:hardbreaks:
+Search InsertionOrder by keyword
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|QueryParameter|pageNo|pageNo|false|integer|
+|QueryParameter|pageSize|pageSize|false|integer|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|List of InsertionOrder|<<InsertionOrderList>>
+|===
+
+=== DELETE /insertionOrder/{id}
+==== Description
+:hardbreaks:
+deletes a single InsertionOrder based on the ID supplied
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|PathParameter|id|ID of InsertionOrder to delete|true|integer|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|InsertionOrder deleted|No Content
+|===
+
+=== GET /insertionOrder/{id}
+==== Description
+:hardbreaks:
+Returns InsertionOrder for the given id
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|PathParameter|id|ID of InsertionOrder|true|integer|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|InsertionOrder response|<<InsertionOrder>>
+|===
+
+=== GET /inventory
+==== Description
+:hardbreaks:
+List of Inventory
+
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|QueryParameter|pageNo|pageNo|false|integer|
+|QueryParameter|pageSize|pageSize|false|integer|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|List of Inventory|<<InventoryList>>
+|===
+
+==== Tags
+
+* Publisher
+
+=== POST /inventory
+==== Description
+:hardbreaks:
+Creates a new Inventory.
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|BodyParameter|inventory|Inventory to be created|true|<<Inventory>>|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|created Inventory|<<Inventory>>
+|===
+
+=== PUT /inventory
+==== Description
+:hardbreaks:
+Updates the Inventory.
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|BodyParameter|inventory|Inventory to be updated|true|<<Inventory>>|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|updated Inventory|<<Inventory>>
+|===
+
+=== GET /inventory/search
+==== Description
+:hardbreaks:
+Search Inventory
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|QueryParameter|zoneID|zoneID|false|string|
+|QueryParameter|digitalPropertyId|digitalPropertyId|false|string|
+|QueryParameter|inventoryName|inventoryName|false|string|
+|QueryParameter|description|description|false|string|
+|QueryParameter|zoneType|zoneType|false|string|
+|QueryParameter|adType|adType|false|string|
+|QueryParameter|adTemplateID|adTemplateID|false|string|
+|QueryParameter|adWidth|adWidth|false|integer|
+|QueryParameter|adHeight|adHeight|false|integer|
+|QueryParameter|adInvocationTag|adInvocationTag|false|string|
+|QueryParameter|passbackAdTag|passbackAdTag|false|string|
+|QueryParameter|floorPrice|floorPrice|false|integer|
+|QueryParameter|totalRequests|totalRequests|false|integer|
+|QueryParameter|totalImpressions|totalImpressions|false|integer|
+|QueryParameter|totalRevenues|totalRevenues|false|number (float)|
+|QueryParameter|keywords|keywords|false|string|
+|QueryParameter|status|status|false|integer|
+|QueryParameter|createdTimeStart|createdTimeStart|false|string|
+|QueryParameter|createdTimeEnd|createdTimeEnd|false|string|
+|QueryParameter|updatedTimeStart|updatedTimeStart|false|string|
+|QueryParameter|updatedTimeEnd|updatedTimeEnd|false|string|
+|QueryParameter|createdByUser|createdByUser|false|string|
+|QueryParameter|updatedByUser|updatedByUser|false|string|
+|QueryParameter|pageNo|pageNo|false|integer|
+|QueryParameter|pageSize|pageSize|false|integer|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|List of Inventory|<<InventoryList>>
+|===
+
+=== GET /inventory/search/keyword
+==== Description
+:hardbreaks:
+Search Inventory by keyword
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|QueryParameter|pageNo|pageNo|false|integer|
+|QueryParameter|pageSize|pageSize|false|integer|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|List of Inventory|<<InventoryList>>
+|===
+
+=== DELETE /inventory/{id}
+==== Description
+:hardbreaks:
+deletes a single Inventory based on the ID supplied
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|PathParameter|id|ID of Inventory to delete|true|integer|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|Inventory deleted|No Content
+|===
+
+=== GET /inventory/{id}
+==== Description
+:hardbreaks:
+Returns Inventory for the given id
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|PathParameter|id|ID of Inventory|true|integer|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|Inventory response|<<Inventory>>
+|===
+
+=== GET /inventorySpace
+==== Description
+:hardbreaks:
+List of InventorySpace
+
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|QueryParameter|pageNo|pageNo|false|integer|
+|QueryParameter|pageSize|pageSize|false|integer|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|List of InventorySpace|<<InventorySpaceList>>
+|===
+
+==== Tags
+
+* Publisher
+
+=== POST /inventorySpace
+==== Description
+:hardbreaks:
+Creates a new InventorySpace.
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|BodyParameter|inventorySpace|InventorySpace to be created|true|<<InventorySpace>>|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|created InventorySpace|<<InventorySpace>>
+|===
+
+=== PUT /inventorySpace
+==== Description
+:hardbreaks:
+Updates the InventorySpace.
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|BodyParameter|inventorySpace|InventorySpace to be updated|true|<<InventorySpace>>|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|updated InventorySpace|<<InventorySpace>>
+|===
+
+=== GET /inventorySpace/search
+==== Description
+:hardbreaks:
+Search InventorySpace
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|QueryParameter|inventoryId|inventoryId|false|string|
+|QueryParameter|estimatedValue|estimatedValue|false|number (float)|
+|QueryParameter|units|units|false|string|
+|QueryParameter|pageNo|pageNo|false|integer|
+|QueryParameter|pageSize|pageSize|false|integer|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|List of InventorySpace|<<InventorySpaceList>>
+|===
+
+=== GET /inventorySpace/search/keyword
+==== Description
+:hardbreaks:
+Search InventorySpace by keyword
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|QueryParameter|pageNo|pageNo|false|integer|
+|QueryParameter|pageSize|pageSize|false|integer|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|List of InventorySpace|<<InventorySpaceList>>
+|===
+
+=== DELETE /inventorySpace/{id}
+==== Description
+:hardbreaks:
+deletes a single InventorySpace based on the ID supplied
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|PathParameter|id|ID of InventorySpace to delete|true|integer|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|InventorySpace deleted|No Content
+|===
+
+=== GET /inventorySpace/{id}
+==== Description
+:hardbreaks:
+Returns InventorySpace for the given id
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|PathParameter|id|ID of InventorySpace|true|integer|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|InventorySpace response|<<InventorySpace>>
+|===
+
+=== GET /lineItem
+==== Description
+:hardbreaks:
+List of LineItem
+
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|QueryParameter|pageNo|pageNo|false|integer|
+|QueryParameter|pageSize|pageSize|false|integer|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|List of LineItem|<<LineItemList>>
+|===
+
+==== Tags
+
+* Campaign
+
+=== POST /lineItem
+==== Description
+:hardbreaks:
+Creates a new LineItem.
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|BodyParameter|lineItem|LineItem to be created|true|<<LineItem>>|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|created LineItem|<<LineItem>>
+|===
+
+=== PUT /lineItem
+==== Description
+:hardbreaks:
+Updates the LineItem.
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|BodyParameter|lineItem|LineItem to be updated|true|<<LineItem>>|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|updated LineItem|<<LineItem>>
+|===
+
+=== GET /lineItem/search
+==== Description
+:hardbreaks:
+Search LineItem
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|QueryParameter|campaignId|campaignId|false|string|
+|QueryParameter|advertiserId|advertiserId|false|string|
+|QueryParameter|bannerName|bannerName|false|string|
+|QueryParameter|description|description|false|string|
+|QueryParameter|adType|adType|false|string|
+|QueryParameter|weightage|weightage|false|integer|
+|QueryParameter|bannerDimension|bannerDimension|false|string|
+|QueryParameter|assetUrl|assetUrl|false|string|
+|QueryParameter|assetText|assetText|false|string|
+|QueryParameter|clickUrl|clickUrl|false|string|
+|QueryParameter|callbackUrl|callbackUrl|false|string|
+|QueryParameter|deliveryChannel|deliveryChannel|false|string|
+|QueryParameter|adTag|adTag|false|string|
+|QueryParameter|impressionsCounter|impressionsCounter|false|integer|
+|QueryParameter|bidsCounter|bidsCounter|false|integer|
+|QueryParameter|currentSpend|currentSpend|false|number (float)|
+|QueryParameter|nativeId|nativeId|false|string|
+|QueryParameter|videoId|videoId|false|string|
+|QueryParameter|bannerStatus|bannerStatus|false|string|
+|QueryParameter|status|status|false|integer|
+|QueryParameter|createdTimeStart|createdTimeStart|false|string|
+|QueryParameter|createdTimeEnd|createdTimeEnd|false|string|
+|QueryParameter|updatedTimeStart|updatedTimeStart|false|string|
+|QueryParameter|updatedTimeEnd|updatedTimeEnd|false|string|
+|QueryParameter|createdByUser|createdByUser|false|string|
+|QueryParameter|updatedByUser|updatedByUser|false|string|
+|QueryParameter|pageNo|pageNo|false|integer|
+|QueryParameter|pageSize|pageSize|false|integer|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|List of LineItem|<<LineItemList>>
+|===
+
+=== GET /lineItem/search/keyword
+==== Description
+:hardbreaks:
+Search LineItem by keyword
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|QueryParameter|pageNo|pageNo|false|integer|
+|QueryParameter|pageSize|pageSize|false|integer|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|List of LineItem|<<LineItemList>>
+|===
+
+=== DELETE /lineItem/{id}
+==== Description
+:hardbreaks:
+deletes a single LineItem based on the ID supplied
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|PathParameter|id|ID of LineItem to delete|true|integer|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|LineItem deleted|No Content
+|===
+
+=== GET /lineItem/{id}
+==== Description
+:hardbreaks:
+Returns LineItem for the given id
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|PathParameter|id|ID of LineItem|true|integer|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|LineItem response|<<LineItem>>
+|===
+
+=== GET /nativeAd
+==== Description
+:hardbreaks:
+List of NativeAd
+
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|QueryParameter|pageNo|pageNo|false|integer|
+|QueryParameter|pageSize|pageSize|false|integer|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|List of NativeAd|<<NativeAdList>>
+|===
+
+==== Tags
+
+* Campaign
+
+=== POST /nativeAd
+==== Description
+:hardbreaks:
+Creates a new NativeAd.
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|BodyParameter|nativeAd|NativeAd to be created|true|<<NativeAd>>|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|created NativeAd|<<NativeAd>>
+|===
+
+=== PUT /nativeAd
+==== Description
+:hardbreaks:
+Updates the NativeAd.
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|BodyParameter|nativeAd|NativeAd to be updated|true|<<NativeAd>>|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|updated NativeAd|<<NativeAd>>
+|===
+
+=== GET /nativeAd/search
+==== Description
+:hardbreaks:
+Search NativeAd
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|QueryParameter|title|title|false|string|
+|QueryParameter|description|description|false|string|
+|QueryParameter|highlightedText|highlightedText|false|string|
+|QueryParameter|icon|icon|false|string|
+|QueryParameter|button|button|false|string|
+|QueryParameter|actionUrl|actionUrl|false|string|
+|QueryParameter|price|price|false|number (float)|
+|QueryParameter|rating|rating|false|integer|
+|QueryParameter|sponsoredText|sponsoredText|false|string|
+|QueryParameter|sponsoredImageUrl|sponsoredImageUrl|false|string|
+|QueryParameter|pageNo|pageNo|false|integer|
+|QueryParameter|pageSize|pageSize|false|integer|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|List of NativeAd|<<NativeAdList>>
+|===
+
+=== GET /nativeAd/search/keyword
+==== Description
+:hardbreaks:
+Search NativeAd by keyword
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|QueryParameter|pageNo|pageNo|false|integer|
+|QueryParameter|pageSize|pageSize|false|integer|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|List of NativeAd|<<NativeAdList>>
+|===
+
+=== DELETE /nativeAd/{id}
+==== Description
+:hardbreaks:
+deletes a single NativeAd based on the ID supplied
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|PathParameter|id|ID of NativeAd to delete|true|integer|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|NativeAd deleted|No Content
+|===
+
+=== GET /nativeAd/{id}
+==== Description
+:hardbreaks:
+Returns NativeAd for the given id
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|PathParameter|id|ID of NativeAd|true|integer|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|NativeAd response|<<NativeAd>>
+|===
+
+=== GET /notification
+==== Description
+:hardbreaks:
+List of Notification
+
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|QueryParameter|pageNo|pageNo|false|integer|
+|QueryParameter|pageSize|pageSize|false|integer|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|List of Notification|<<NotificationList>>
+|===
+
+==== Tags
+
+* User
+
+=== POST /notification
+==== Description
+:hardbreaks:
+Creates a new Notification.
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|BodyParameter|notification|Notification to be created|true|<<Notification>>|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|created Notification|<<Notification>>
+|===
+
+=== PUT /notification
+==== Description
+:hardbreaks:
+Updates the Notification.
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|BodyParameter|notification|Notification to be updated|true|<<Notification>>|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|updated Notification|<<Notification>>
+|===
+
+=== GET /notification/search
+==== Description
+:hardbreaks:
+Search Notification
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|QueryParameter|notificationId|notificationId|false|string|
+|QueryParameter|userId|userId|false|string|
+|QueryParameter|deviceOS|deviceOS|false|string|
+|QueryParameter|source|source|false|string|
+|QueryParameter|createdTimeStart|createdTimeStart|false|string|
+|QueryParameter|createdTimeEnd|createdTimeEnd|false|string|
+|QueryParameter|updatedTimeStart|updatedTimeStart|false|string|
+|QueryParameter|updatedTimeEnd|updatedTimeEnd|false|string|
+|QueryParameter|createdByUser|createdByUser|false|string|
+|QueryParameter|updatedByUser|updatedByUser|false|string|
+|QueryParameter|pageNo|pageNo|false|integer|
+|QueryParameter|pageSize|pageSize|false|integer|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|List of Notification|<<NotificationList>>
+|===
+
+=== GET /notification/search/keyword
+==== Description
+:hardbreaks:
+Search Notification by keyword
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|QueryParameter|pageNo|pageNo|false|integer|
+|QueryParameter|pageSize|pageSize|false|integer|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|List of Notification|<<NotificationList>>
+|===
+
+=== DELETE /notification/{id}
+==== Description
+:hardbreaks:
+deletes a single Notification based on the ID supplied
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|PathParameter|id|ID of Notification to delete|true|integer|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|Notification deleted|No Content
+|===
+
+=== GET /notification/{id}
+==== Description
+:hardbreaks:
+Returns Notification for the given id
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|PathParameter|id|ID of Notification|true|integer|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|Notification response|<<Notification>>
+|===
+
+=== GET /publisher
+==== Description
+:hardbreaks:
+List of Publisher
+
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|QueryParameter|pageNo|pageNo|false|integer|
+|QueryParameter|pageSize|pageSize|false|integer|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|List of Publisher|<<PublisherList>>
+|===
+
+==== Tags
+
+* User
+
+=== POST /publisher
+==== Description
+:hardbreaks:
+Creates a new Publisher.
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|BodyParameter|publisher|Publisher to be created|true|<<Publisher>>|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|created Publisher|<<Publisher>>
+|===
+
+=== PUT /publisher
+==== Description
+:hardbreaks:
+Updates the Publisher.
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|BodyParameter|publisher|Publisher to be updated|true|<<Publisher>>|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|updated Publisher|<<Publisher>>
+|===
+
+=== GET /publisher/search
+==== Description
+:hardbreaks:
+Search Publisher
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|QueryParameter|publisherId|publisherId|false|string|
+|QueryParameter|publisherName|publisherName|false|string|
+|QueryParameter|company|company|false|string|
+|QueryParameter|contactName|contactName|false|string|
+|QueryParameter|contactNumber|contactNumber|false|string|
+|QueryParameter|country|country|false|string|
+|QueryParameter|primaryDomain|primaryDomain|false|string|
+|QueryParameter|iabCategory|iabCategory|false|string|
+|QueryParameter|address|address|false|string|
+|QueryParameter|status|status|false|integer|
+|QueryParameter|createdTimeStart|createdTimeStart|false|string|
+|QueryParameter|createdTimeEnd|createdTimeEnd|false|string|
+|QueryParameter|updatedTimeStart|updatedTimeStart|false|string|
+|QueryParameter|updatedTimeEnd|updatedTimeEnd|false|string|
+|QueryParameter|createdByUser|createdByUser|false|string|
+|QueryParameter|updatedByUser|updatedByUser|false|string|
+|QueryParameter|pageNo|pageNo|false|integer|
+|QueryParameter|pageSize|pageSize|false|integer|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|List of Publisher|<<PublisherList>>
+|===
+
+=== GET /publisher/search/keyword
+==== Description
+:hardbreaks:
+Search Publisher by keyword
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|QueryParameter|pageNo|pageNo|false|integer|
+|QueryParameter|pageSize|pageSize|false|integer|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|List of Publisher|<<PublisherList>>
+|===
+
+=== DELETE /publisher/{id}
+==== Description
+:hardbreaks:
+deletes a single Publisher based on the ID supplied
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|PathParameter|id|ID of Publisher to delete|true|integer|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|Publisher deleted|No Content
+|===
+
+=== GET /publisher/{id}
+==== Description
+:hardbreaks:
+Returns Publisher for the given id
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|PathParameter|id|ID of Publisher|true|integer|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|Publisher response|<<Publisher>>
+|===
+
+=== GET /role
+==== Description
+:hardbreaks:
+List of Role
+
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|QueryParameter|pageNo|pageNo|false|integer|
+|QueryParameter|pageSize|pageSize|false|integer|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|List of Role|<<RoleList>>
+|===
+
+==== Tags
+
+* User
+
+=== POST /role
+==== Description
+:hardbreaks:
+Creates a new Role.
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|BodyParameter|role|Role to be created|true|<<Role>>|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|created Role|<<Role>>
+|===
+
+=== PUT /role
+==== Description
+:hardbreaks:
+Updates the Role.
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|BodyParameter|role|Role to be updated|true|<<Role>>|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|updated Role|<<Role>>
+|===
+
+=== GET /role/search
+==== Description
+:hardbreaks:
+Search Role
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|QueryParameter|roleId|roleId|false|string|
+|QueryParameter|roleName|roleName|false|integer|
+|QueryParameter|roleGroup|roleGroup|false|integer|
+|QueryParameter|createdTimeStart|createdTimeStart|false|string|
+|QueryParameter|createdTimeEnd|createdTimeEnd|false|string|
+|QueryParameter|updatedTimeStart|updatedTimeStart|false|string|
+|QueryParameter|updatedTimeEnd|updatedTimeEnd|false|string|
+|QueryParameter|createdByUser|createdByUser|false|string|
+|QueryParameter|updatedByUser|updatedByUser|false|string|
+|QueryParameter|pageNo|pageNo|false|integer|
+|QueryParameter|pageSize|pageSize|false|integer|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|List of Role|<<RoleList>>
+|===
+
+=== GET /role/search/keyword
+==== Description
+:hardbreaks:
+Search Role by keyword
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|QueryParameter|pageNo|pageNo|false|integer|
+|QueryParameter|pageSize|pageSize|false|integer|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|List of Role|<<RoleList>>
+|===
+
+=== DELETE /role/{id}
+==== Description
+:hardbreaks:
+deletes a single Role based on the ID supplied
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|PathParameter|id|ID of Role to delete|true|integer|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|Role deleted|No Content
+|===
+
+=== GET /role/{id}
+==== Description
+:hardbreaks:
+Returns Role for the given id
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|PathParameter|id|ID of Role|true|integer|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|Role response|<<Role>>
+|===
+
+=== GET /user
+==== Description
+:hardbreaks:
+List of User
+
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|QueryParameter|pageNo|pageNo|false|integer|
+|QueryParameter|pageSize|pageSize|false|integer|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|List of User|<<UserList>>
+|===
+
+==== Tags
+
+* User
+
+=== POST /user
+==== Description
+:hardbreaks:
+Creates a new User.
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|BodyParameter|user|User to be created|true|<<User>>|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|created User|<<User>>
+|===
+
+=== PUT /user
+==== Description
+:hardbreaks:
+Updates the User.
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|BodyParameter|user|User to be updated|true|<<User>>|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|updated User|<<User>>
+|===
+
+=== GET /user/search
+==== Description
+:hardbreaks:
+Search User
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|QueryParameter|email|email|false|string|
+|QueryParameter|loginName|loginName|false|string|
+|QueryParameter|password|password|false|string|
+|QueryParameter|status|status|false|integer|
+|QueryParameter|userType|userType|false|integer|
+|QueryParameter|hintQuestion1|hintQuestion1|false|string|
+|QueryParameter|hintAnswer1|hintAnswer1|false|string|
+|QueryParameter|hintQuestion2|hintQuestion2|false|string|
+|QueryParameter|hintAnswer2|hintAnswer2|false|string|
+|QueryParameter|isAdmin|isAdmin|false|boolean|
+|QueryParameter|createdTimeStart|createdTimeStart|false|string|
+|QueryParameter|createdTimeEnd|createdTimeEnd|false|string|
+|QueryParameter|updatedTimeStart|updatedTimeStart|false|string|
+|QueryParameter|updatedTimeEnd|updatedTimeEnd|false|string|
+|QueryParameter|createdByUser|createdByUser|false|string|
+|QueryParameter|updatedByUser|updatedByUser|false|string|
+|QueryParameter|advertiserId|advertiserId|false||
+|QueryParameter|publisherId|publisherId|false||
+|QueryParameter|roleId|roleId|false||
+|QueryParameter|pageNo|pageNo|false|integer|
+|QueryParameter|pageSize|pageSize|false|integer|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|List of User|<<UserList>>
+|===
+
+=== GET /user/search/keyword
+==== Description
+:hardbreaks:
+Search User by keyword
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|QueryParameter|pageNo|pageNo|false|integer|
+|QueryParameter|pageSize|pageSize|false|integer|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|List of User|<<UserList>>
+|===
+
+=== DELETE /user/{id}
+==== Description
+:hardbreaks:
+deletes a single User based on the ID supplied
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|PathParameter|id|ID of User to delete|true|integer|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|User deleted|No Content
+|===
+
+=== GET /user/{id}
+==== Description
+:hardbreaks:
+Returns User for the given id
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|PathParameter|id|ID of User|true|integer|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|User response|<<User>>
+|===
+
+=== GET /userSession
+==== Description
+:hardbreaks:
+List of UserSession
+
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|QueryParameter|pageNo|pageNo|false|integer|
+|QueryParameter|pageSize|pageSize|false|integer|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|List of UserSession|<<UserSessionList>>
+|===
+
+==== Tags
+
+* User
+
+=== POST /userSession
+==== Description
+:hardbreaks:
+Creates a new UserSession.
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|BodyParameter|userSession|UserSession to be created|true|<<UserSession>>|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|created UserSession|<<UserSession>>
+|===
+
+=== PUT /userSession
+==== Description
+:hardbreaks:
+Updates the UserSession.
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|BodyParameter|userSession|UserSession to be updated|true|<<UserSession>>|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|updated UserSession|<<UserSession>>
+|===
+
+=== GET /userSession/search
+==== Description
+:hardbreaks:
+Search UserSession
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|QueryParameter|userId|userId|false|string|
+|QueryParameter|userSessionId|userSessionId|false|string|
+|QueryParameter|authToken|authToken|false|string|
+|QueryParameter|lastAccessTimeStart|lastAccessTimeStart|false|string|
+|QueryParameter|lastAccessTimeEnd|lastAccessTimeEnd|false|string|
+|QueryParameter|lastLoggedInTimeStart|lastLoggedInTimeStart|false|string|
+|QueryParameter|lastLoggedInTimeEnd|lastLoggedInTimeEnd|false|string|
+|QueryParameter|createdTimeStart|createdTimeStart|false|string|
+|QueryParameter|createdTimeEnd|createdTimeEnd|false|string|
+|QueryParameter|updatedTimeStart|updatedTimeStart|false|string|
+|QueryParameter|updatedTimeEnd|updatedTimeEnd|false|string|
+|QueryParameter|createdByUser|createdByUser|false|string|
+|QueryParameter|updatedByUser|updatedByUser|false|string|
+|QueryParameter|pageNo|pageNo|false|integer|
+|QueryParameter|pageSize|pageSize|false|integer|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|List of UserSession|<<UserSessionList>>
+|===
+
+=== GET /userSession/search/keyword
+==== Description
+:hardbreaks:
+Search UserSession by keyword
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|QueryParameter|pageNo|pageNo|false|integer|
+|QueryParameter|pageSize|pageSize|false|integer|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|List of UserSession|<<UserSessionList>>
+|===
+
+=== DELETE /userSession/{id}
+==== Description
+:hardbreaks:
+deletes a single UserSession based on the ID supplied
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|PathParameter|id|ID of UserSession to delete|true|integer|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|UserSession deleted|No Content
+|===
+
+=== GET /userSession/{id}
+==== Description
+:hardbreaks:
+Returns UserSession for the given id
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|PathParameter|id|ID of UserSession|true|integer|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|UserSession response|<<UserSession>>
+|===
+
+=== GET /video
+==== Description
+:hardbreaks:
+List of Video
+
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|QueryParameter|pageNo|pageNo|false|integer|
+|QueryParameter|pageSize|pageSize|false|integer|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|List of Video|<<VideoList>>
+|===
+
+==== Tags
+
+* Campaign
+
+=== POST /video
+==== Description
+:hardbreaks:
+Creates a new Video.
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|BodyParameter|video|Video to be created|true|<<Video>>|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|created Video|<<Video>>
+|===
+
+=== PUT /video
+==== Description
+:hardbreaks:
+Updates the Video.
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|BodyParameter|video|Video to be updated|true|<<Video>>|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|updated Video|<<Video>>
+|===
+
+=== GET /video/search
+==== Description
+:hardbreaks:
+Search Video
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|QueryParameter|title|title|false|string|
+|QueryParameter|videoUrl|videoUrl|false|string|
+|QueryParameter|videoType|videoType|false|string|
+|QueryParameter|delivery|delivery|false|string|
+|QueryParameter|bitrate|bitrate|false|string|
+|QueryParameter|width|width|false|integer|
+|QueryParameter|height|height|false|integer|
+|QueryParameter|duration|duration|false|number (float)|
+|QueryParameter|pageNo|pageNo|false|integer|
+|QueryParameter|pageSize|pageSize|false|integer|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|List of Video|<<VideoList>>
+|===
+
+=== GET /video/search/keyword
+==== Description
+:hardbreaks:
+Search Video by keyword
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|QueryParameter|pageNo|pageNo|false|integer|
+|QueryParameter|pageSize|pageSize|false|integer|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|List of Video|<<VideoList>>
+|===
+
+=== DELETE /video/{id}
+==== Description
+:hardbreaks:
+deletes a single Video based on the ID supplied
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|PathParameter|id|ID of Video to delete|true|integer|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|Video deleted|No Content
+|===
+
+=== GET /video/{id}
+==== Description
+:hardbreaks:
+Returns Video for the given id
+
+==== Parameters
+[options="header"]
+|===
+|Type|Name|Description|Required|Schema|Default
+|PathParameter|id|ID of Video|true|integer|
+|===
+
+==== Responses
+[options="header"]
+|===
+|HTTP Code|Description|Schema
+|200|Video response|<<Video>>
+|===
+

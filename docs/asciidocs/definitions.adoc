@@ -1,0 +1,510 @@
+== Definitions
+=== AdTemplates
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|id|Id|false|integer|
+|adTemplateID||false|string|
+|templateName||false|string|
+|isMobileFlag||false|integer|
+|width||false|integer|
+|height||false|integer|
+|status||false|integer|
+|createdTime||false|string (date)|
+|updatedTime||false|string (date)|
+|createdByUser||false|string|
+|updatedByUser||false|string|
+|===
+
+=== AdTemplatesList
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|count|Total count of objects|false|integer (int64)|
+|adTemplatess||false|<<AdTemplates>> array|
+|===
+
+=== Advertiser
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|id|Id|false|integer|
+|advertiserId||false|string|
+|advertiserName||false|string|
+|company||false|string|
+|contactName||false|string|
+|contactNumber||false|string|
+|country||false|string|
+|description||false|string|
+|partnerType||false|string|
+|status||false|string|
+|createdTime||false|string (date)|
+|updatedTime||false|string (date)|
+|createdByUser||false|string|
+|updatedByUser||false|string|
+|===
+
+=== AdvertiserList
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|count|Total count of objects|false|integer (int64)|
+|advertisers||false|<<Advertiser>> array|
+|===
+
+=== BannerAdTarget
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|id|Id|false|integer|
+|bannerID||false|string|
+|campaignID||false|string|
+|geo||false|string|
+|state||false|string|
+|city||false|string|
+|ageGroup||false|string|
+|gender||false|string|
+|category||false|string|
+|keyword||false|string|
+|status||false|integer|
+|===
+
+=== BannerAdTargetList
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|count|Total count of objects|false|integer (int64)|
+|bannerAdTargets||false|<<BannerAdTarget>> array|
+|===
+
+=== BannerAdzones
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|id|Id|false|integer|
+|bannerID||false|string|
+|zoneID||false|string|
+|campaignID||false|string|
+|===
+
+=== BannerAdzonesList
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|count|Total count of objects|false|integer (int64)|
+|bannerAdzoness||false|<<BannerAdzones>> array|
+|===
+
+=== DailyImpressions
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|id|Id|false|integer|
+|publisherId||false|integer|
+|digitalPropertyid||false|integer|
+|lineItemId||false|integer|
+|zoneId||false|integer|
+|noOfImpressions||false|integer|
+|noOfClicks||false|integer|
+|date||false|integer|
+|createdTime||false|string (date)|
+|updatedTime||false|string (date)|
+|createdByUser||false|string|
+|updatedByUser||false|string|
+|===
+
+=== DailyImpressionsList
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|count|Total count of objects|false|integer (int64)|
+|dailyImpressionss||false|<<DailyImpressions>> array|
+|===
+
+=== DigitalProperty
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|id|Id|false|integer|
+|propertyName||false|string|
+|description||false|string|
+|type||false|string|
+|domainURL||false|string|
+|publisherId||false|string|
+|IABCategory||false|string|
+|IABSubCategory||false|string|
+|country||false|string|
+|language||false|string|
+|status||false|integer|
+|createdTime||false|string (date)|
+|updatedTime||false|string (date)|
+|createdByUser||false|string|
+|updatedByUser||false|string|
+|===
+
+=== DigitalPropertyList
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|count|Total count of objects|false|integer (int64)|
+|digitalPropertys||false|<<DigitalProperty>> array|
+|===
+
+=== HourlyImpressions
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|id|Id|false|integer|
+|publisherId||false|string|
+|digitalPropertyid||false|integer|
+|lineItemId||false|integer|
+|zoneId||false|string|
+|noOfImpressions||false|integer|
+|noOfClicks||false|integer|
+|dateTime||false|integer|
+|createdTime||false|string (date)|
+|updatedTime||false|string (date)|
+|createdByUser||false|string|
+|updatedByUser||false|string|
+|===
+
+=== HourlyImpressionsList
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|count|Total count of objects|false|integer (int64)|
+|hourlyImpressionss||false|<<HourlyImpressions>> array|
+|===
+
+=== IndustryCategory
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|id|Id|false|integer|
+|name||false|string|
+|description||false|string|
+|status||false|integer|
+|parentID||false|string|
+|createdTime||false|string (date)|
+|updatedTime||false|string (date)|
+|createdByUser||false|string|
+|updatedByUser||false|string|
+|===
+
+=== IndustryCategoryList
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|count|Total count of objects|false|integer (int64)|
+|industryCategorys||false|<<IndustryCategory>> array|
+|===
+
+=== InsertionOrder
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|id|Id|false|integer|
+|insertionOrderId||false|string|
+|campaignName||false|string|
+|description||false|string|
+|campaignObjective||false|string|
+|campaignStartDate||false|string (date)|
+|campaignEndDate||false|string (date)|
+|orderType||false|string|
+|spend||false|number (float)|
+|currency||false|number (float)|
+|revenueModel||false|string|
+|maximumImpressions||false|integer|
+|maximumSpend||false|number (float)|
+|currentImpressions||false|integer|
+|currentSpend||false|number (float)|
+|maximumSpendPerDay||false|number (float)|
+|pixelTrackingEnabled||false|boolean|
+|companionCampaign||false|string|
+|campaignStatus||false|string|
+|priority||false|string|
+|comments||false|string|
+|advertiserId||false|string|
+|status||false|integer|
+|createdTime||false|string (date)|
+|updatedTime||false|string (date)|
+|createdByUser||false|string|
+|updatedByUser||false|string|
+|===
+
+=== InsertionOrderList
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|count|Total count of objects|false|integer (int64)|
+|insertionOrders||false|<<InsertionOrder>> array|
+|===
+
+=== Inventory
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|id|Id|false|integer|
+|zoneID||false|string|
+|digitalPropertyId||false|string|
+|inventoryName||false|string|
+|description||false|string|
+|zoneType||false|string|
+|adType||false|string|
+|adTemplateID||false|string|
+|adWidth||false|integer|
+|adHeight||false|integer|
+|adInvocationTag||false|string|
+|passbackAdTag||false|string|
+|floorPrice||false|integer|
+|totalRequests||false|integer|
+|totalImpressions||false|integer|
+|totalRevenues||false|number (float)|
+|keywords||false|string|
+|status||false|integer|
+|createdTime||false|string (date)|
+|updatedTime||false|string (date)|
+|createdByUser||false|string|
+|updatedByUser||false|string|
+|===
+
+=== InventoryList
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|count|Total count of objects|false|integer (int64)|
+|inventorys||false|<<Inventory>> array|
+|===
+
+=== InventorySpace
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|id|Id|false|integer|
+|inventoryId||false|string|
+|estimatedValue||false|number (float)|
+|units||false|string|
+|===
+
+=== InventorySpaceList
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|count|Total count of objects|false|integer (int64)|
+|inventorySpaces||false|<<InventorySpace>> array|
+|===
+
+=== LineItem
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|id|Id|false|integer|
+|campaignId||false|string|
+|advertiserId||false|string|
+|bannerName||false|string|
+|description||false|string|
+|adType||false|string|
+|weightage||false|integer|
+|bannerDimension||false|string|
+|assetUrl||false|string|
+|assetText||false|string|
+|clickUrl||false|string|
+|callbackUrl||false|string|
+|deliveryChannel||false|string|
+|adTag||false|string|
+|impressionsCounter||false|integer|
+|bidsCounter||false|integer|
+|currentSpend||false|number (float)|
+|nativeId||false|string|
+|videoId||false|string|
+|bannerStatus||false|string|
+|status||false|integer|
+|createdTime||false|string (date)|
+|updatedTime||false|string (date)|
+|createdByUser||false|string|
+|updatedByUser||false|string|
+|===
+
+=== LineItemList
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|count|Total count of objects|false|integer (int64)|
+|lineItems||false|<<LineItem>> array|
+|===
+
+=== NativeAd
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|id|Id|false|integer|
+|title||false|string|
+|description||false|string|
+|highlightedText||false|string|
+|icon||false|string|
+|button||false|string|
+|actionUrl||false|string|
+|price||false|number (float)|
+|rating||false|integer|
+|sponsoredText||false|string|
+|sponsoredImageUrl||false|string|
+|===
+
+=== NativeAdList
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|count|Total count of objects|false|integer (int64)|
+|nativeAds||false|<<NativeAd>> array|
+|===
+
+=== Notification
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|id|Id|false|integer|
+|notificationId||false|string|
+|userId||false|string|
+|deviceOS||false|string|
+|source||false|string|
+|createdTime||false|string (date)|
+|updatedTime||false|string (date)|
+|createdByUser||false|string|
+|updatedByUser||false|string|
+|===
+
+=== NotificationList
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|count|Total count of objects|false|integer (int64)|
+|notifications||false|<<Notification>> array|
+|===
+
+=== Publisher
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|id|Id|false|integer|
+|publisherId||false|string|
+|publisherName||false|string|
+|company||false|string|
+|contactName||false|string|
+|contactNumber||false|string|
+|country||false|string|
+|primaryDomain||false|string|
+|iabCategory||false|string|
+|address||false|string|
+|status||false|integer|
+|createdTime||false|string (date)|
+|updatedTime||false|string (date)|
+|createdByUser||false|string|
+|updatedByUser||false|string|
+|===
+
+=== PublisherList
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|count|Total count of objects|false|integer (int64)|
+|publishers||false|<<Publisher>> array|
+|===
+
+=== Role
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|id|Id|false|integer|
+|roleId||false|string|
+|roleName||false|integer|
+|roleGroup||false|integer|
+|createdTime||false|string (date)|
+|updatedTime||false|string (date)|
+|createdByUser||false|string|
+|updatedByUser||false|string|
+|===
+
+=== RoleList
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|count|Total count of objects|false|integer (int64)|
+|roles||false|<<Role>> array|
+|===
+
+=== User
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|id|Id|false|integer|
+|email||false|string|
+|loginName||false|string|
+|password||false|string|
+|status||false|integer|
+|userType||false|integer|
+|hintQuestion1||false|string|
+|hintAnswer1||false|string|
+|hintQuestion2||false|string|
+|hintAnswer2||false|string|
+|isAdmin||false|boolean|
+|createdTime||false|string (date)|
+|updatedTime||false|string (date)|
+|createdByUser||false|string|
+|updatedByUser||false|string|
+|===
+
+=== UserList
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|count|Total count of objects|false|integer (int64)|
+|users||false|<<User>> array|
+|===
+
+=== UserSession
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|id|Id|false|integer|
+|userId||false|string|
+|userSessionId||false|string|
+|authToken||false|string|
+|lastAccessTime||false|string (date)|
+|lastLoggedInTime||false|string (date)|
+|createdTime||false|string (date)|
+|updatedTime||false|string (date)|
+|createdByUser||false|string|
+|updatedByUser||false|string|
+|===
+
+=== UserSessionList
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|count|Total count of objects|false|integer (int64)|
+|userSessions||false|<<UserSession>> array|
+|===
+
+=== Video
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|id|Id|false|integer|
+|title||false|string|
+|videoUrl||false|string|
+|videoType||false|string|
+|delivery||false|string|
+|bitrate||false|string|
+|width||false|integer|
+|height||false|integer|
+|duration||false|number (float)|
+|===
+
+=== VideoList
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|count|Total count of objects|false|integer (int64)|
+|videos||false|<<Video>> array|
+|===
+
